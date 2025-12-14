@@ -2,9 +2,9 @@
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v10.0 Nuclear 2025", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v10.1 Nuclear 2025", layout="centered")
 
-# Estilo v10.0 profesional
+# Estilo v10.1
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -15,19 +15,21 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>Grok Prompt Builder v10.0 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - 1000% Identity Lock - Nitidez/Contraste/Color Vibrante Profesional</p>", unsafe_allow_html=True)
+st.markdown("<h1>Grok Prompt Builder v10.1 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - Checkboxes Normales (Nitidez, Contraste, Identity)</p>", unsafe_allow_html=True)
 
 # Texto fijo al inicio
 texto_fijo_inicio = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Firma en la parte inferior derecha de Carlos Ernesto. "
 
-# Nitidez y contraste siempre ON (profundizados 2025)
-nitidez_texto = "extreme sharpness, razor-sharp micro-details, perfect micro-contrast, high dynamic range throughout, "
-contraste_color_texto = "perfect shadow/highlight recovery, rich deep blacks, bright vibrant highlights, cinematic contrast curve with rich saturated colors, no dull tones, "
+# Checkboxes normales (default ON pero desactivables)
+nitidez_extrema = st.checkbox("Activar nitidez extrema profesional", value=True)
+contraste_extremo = st.checkbox("Activar contraste extremo profesional", value=True)
+usar_lock_absoluto = st.checkbox("Activar IDENTIDAD LOCK ABSOLUTO v7 (1000% inviolable)", value=True)
 
-# IDENTIDAD LOCK siempre ON
-usar_lock_absoluto = st.checkbox("Activar IDENTIDAD LOCK ABSOLUTO v7 (1000% inviolable - siempre ON)", value=True)
+nitidez_texto = "extreme sharpness, razor-sharp micro-details, perfect micro-contrast, high dynamic range throughout, " if nitidez_extrema else ""
+contraste_color_texto = "perfect shadow/highlight recovery, rich deep blacks, bright vibrant highlights, cinematic contrast curve with rich saturated colors, no dull tones, " if contraste_extremo else ""
 
+# Género y tipo de cuerpo (solo si desactivas lock)
 if not usar_lock_absoluto:
     masculino = st.checkbox("Sujeto Masculino", value=True)
     tipo_cuerpo = st.selectbox("Tipo de Cuerpo", [
@@ -138,7 +140,7 @@ full_en = prompt_en + negative_full
 full_es = prompt_es + negative_full
 
 # Salida principal
-st.markdown("### Prompt Ingles Nuclear v10.0")
+st.markdown("### Prompt Ingles Nuclear v10.1")
 st.code(full_en, language="text")
 col1, col2 = st.columns(2)
 with col1:
@@ -151,9 +153,9 @@ with col1:
         st.success("Prompt Ingles copiado al portapapeles!")
 with col2:
     buffer_en = BytesIO(full_en.encode())
-    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v10.0.txt", "text/plain")
+    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v10.1.txt", "text/plain")
 
-st.markdown("### Prompt Espanol Nuclear v10.0")
+st.markdown("### Prompt Espanol Nuclear v10.1")
 st.code(full_es, language="text")
 col3, col4 = st.columns(2)
 with col3:
@@ -166,10 +168,10 @@ with col3:
         st.success("Prompt Espanol copiado al portapapeles!")
 with col4:
     buffer_es = BytesIO(full_es.encode())
-    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v10.0.txt", "text/plain")
+    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v10.1.txt", "text/plain")
 
 # Perfeccionador profesional (con nitidez/contraste/color)
-st.markdown("### Perfeccionador de Prompt Profesional v10.0")
+st.markdown("### Perfeccionador de Prompt Profesional v10.1")
 prompt_crudo = st.text_area("Pega aquí cualquier prompt crudo para aumentarlo con palabras técnicas profesionales", height=150, placeholder="Ej: un hombre mirando a cámara...")
 
 if st.button("Aumentar con palabras técnicas profesionales"):
@@ -197,4 +199,4 @@ if st.button("Generar Plantilla Restauracion Nuclear v7"):
     )
     st.code(restauracion_nuclear + negative_full, language="text")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v10.0 Nuclear Ultimate 2025 - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v10.1 Nuclear Ultimate 2025 - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
