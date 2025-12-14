@@ -2,9 +2,9 @@
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v7.3 Nuclear 2025", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v7.5 Nuclear 2025", layout="centered")
 
-# Estilo v7.3
+# Estilo v7.5
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -15,13 +15,22 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>Grok Prompt Builder v7.3 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - 1000% Identity Lock Absoluto - Prompt Técnico Profesional</p>", unsafe_allow_html=True)
+st.markdown("<h1>Grok Prompt Builder v7.5 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - 1000% Identity Lock Absoluto - Nitidez y Contraste Extremo Profesional</p>", unsafe_allow_html=True)
+
+# Texto fijo obligatorio al inicio
+texto_fijo_inicio = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Firma en la parte inferior derecha de Carlos Ernesto. "
+
+# Nuevas checkboxes para nitidez y contraste extremo
+nitidez_extrema = st.checkbox("Activar nitidez extrema profesional (recomendado ON)", value=True)
+contraste_extremo = st.checkbox("Activar contraste extremo profesional (recomendado ON)", value=True)
+
+nitidez_texto = "extreme sharpness, razor-sharp micro-details, perfect micro-contrast, high dynamic range throughout, " if nitidez_extrema else ""
+contraste_texto = "perfect shadow/highlight recovery, rich deep blacks, bright highlights, cinematic contrast curve, " if contraste_extremo else ""
 
 # 1. IDENTIDAD LOCK ABSOLUTO v7
 usar_lock_absoluto = st.checkbox("Activar IDENTIDAD LOCK ABSOLUTO v7 (1000% inviolable - recomendado ON)", value=True)
 
-# Género y tipo de cuerpo (solo si desactivas lock)
 if not usar_lock_absoluto:
     masculino = st.checkbox("Sujeto Masculino", value=True)
     tipo_cuerpo = st.selectbox("Tipo de Cuerpo", [
@@ -38,7 +47,6 @@ else:
     masculino = True
     tipo_cuerpo = "Delgado (slim)"
 
-# Identidad final
 if usar_lock_absoluto:
     identidad_final = ("Exact same person, 31 years old, 1.650 m barefoot height, 59-61 kg, BMI 21.8, lean ectomorph body, zero visible muscle definition, flat stomach, narrow shoulders 39 cm biacromial, long slim arms (arm span 1.70 m), narrow wrists 16 cm, long legs, visible thigh gap. "
                        "Face: perfect rectangle 19.5 cm length x 14 cm width, strong square jaw 120 degree gonial angle, high defined cheekbones, straight medium nose 5.2 cm length, thin upper lip 8 mm, medium lower lip, philtrum 1.4 cm. "
@@ -110,12 +118,12 @@ if usar_formula_nuclear:
 else:
     base_nuclear = "Generate a hyperrealistic 8K image without changing facial features hair or skin tone of the subject, extreme sharpness perfect micro-contrast high dynamic range razor-sharp details throughout"
 
-# Prompt final técnico profesional
+# Prompt principal con nitidez y contraste
 sujeto_final = f"photorealistic portrait of {identidad_final}, "
 
-prompt_en = f"{base_nuclear} {sujeto_final}{tipo_plano}, shot on Canon EOS R5 Mark II + {lente_exacta}, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
+prompt_en = f"{texto_fijo_inicio}{base_nuclear} {nitidez_texto}{contraste_texto}{sujeto_final}{tipo_plano}, shot on Canon EOS R5 Mark II + {lente_exacta}, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
 
-prompt_es = f"{base_nuclear} Retrato fotorealista de {identidad_final}, {tipo_plano}, tomado con Canon EOS R5 Mark II + {lente_exacta}, {iluminacion_pro}, {composicion_pro}, priorizar textura piel natural poros visibles micro-detalles imperfecciones realistas arrugas sutiles grano tela, {fondo}, {detalles_final}, ultra HD 8K fotorealista maximo detalle claridad Adobe RGB, {firma_obligatoria}"
+prompt_es = f"{texto_fijo_inicio}{base_nuclear} {nitidez_texto}{contraste_texto}Retrato fotorealista de {identidad_final}, {tipo_plano}, tomado con Canon EOS R5 Mark II + {lente_exacta}, {iluminacion_pro}, {composicion_pro}, priorizar textura piel natural poros visibles micro-detalles imperfecciones realistas arrugas sutiles grano tela, {fondo}, {detalles_final}, ultra HD 8K fotorealista maximo detalle claridad Adobe RGB, {firma_obligatoria}"
 
 negative_full = f"\n\nNegative prompt: {negative_nuclear}"
 
@@ -123,7 +131,7 @@ full_en = prompt_en + negative_full
 full_es = prompt_es + negative_full
 
 # Salida principal
-st.markdown("### Prompt Ingles Nuclear v7.3 Profesional")
+st.markdown("### Prompt Ingles Nuclear v7.5")
 st.code(full_en, language="text")
 col1, col2 = st.columns(2)
 with col1:
@@ -131,9 +139,9 @@ with col1:
         st.success("Copiado!")
 with col2:
     buffer_en = BytesIO(full_en.encode())
-    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v7.3.txt", "text/plain")
+    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v7.5.txt", "text/plain")
 
-st.markdown("### Prompt Espanol Nuclear v7.3 Profesional")
+st.markdown("### Prompt Espanol Nuclear v7.5")
 st.code(full_es, language="text")
 col3, col4 = st.columns(2)
 with col3:
@@ -141,27 +149,27 @@ with col3:
         st.success("Copiado!")
 with col4:
     buffer_es = BytesIO(full_es.encode())
-    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v7.3.txt", "text/plain")
+    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v7.5.txt", "text/plain")
 
-# PERFECCIONADOR PROFESIONAL (nuevo, justo lo que pedías)
-st.markdown("### Perfeccionador de Prompt Profesional v7.3")
+# Perfeccionador profesional (con nitidez y contraste)
+st.markdown("### Perfeccionador de Prompt Profesional v7.5")
 prompt_crudo = st.text_area("Pega aquí cualquier prompt crudo para aumentarlo con palabras técnicas profesionales", height=150, placeholder="Ej: un hombre mirando a cámara...")
 
 if st.button("Aumentar con palabras técnicas profesionales"):
     if prompt_crudo.strip():
-        prompt_perfeccionado = f"{base_nuclear} {prompt_crudo.strip()}, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
+        prompt_perfeccionado = f"{texto_fijo_inicio}{base_nuclear} {nitidez_texto}{contraste_texto}{prompt_crudo.strip()}, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
         full_perfeccionado = prompt_perfeccionado + negative_full
         st.code(full_perfeccionado, language="text")
-        st.success("Prompt aumentado profesionalmente con toda la potencia v7.3!")
+        st.success("Prompt aumentado profesionalmente con nitidez y contraste extremo + potencia v7.5!")
     else:
         st.warning("Pega un prompt primero")
 
-# Restauracion v7
+# Restauracion v7 (con nitidez y contraste)
 if st.button("Generar Plantilla Restauracion Nuclear v7"):
-    restauracion_nuclear = ("Museum-grade restoration of this damaged historical photograph to 8K 16-bit: surgically remove every dust speck, scratch, fold, crease, chemical stain, water damage, silvering, yellowing and fading while preserving 100% original film grain structure and chemical fingerprint. "
+    restauracion_nuclear = f"{texto_fijo_inicio}{base_nuclear} {nitidez_texto}{contraste_texto}Museum-grade restoration of this damaged historical photograph to 8K 16-bit: surgically remove every dust speck, scratch, fold, crease, chemical stain, water damage, silvering, yellowing and fading while preserving 100% original film grain structure and chemical fingerprint. "
                             "Forensic pixel-perfect reconstruction of missing areas. Frequency separation sharpening radius 0.7px, local contrast +8, full dynamic range recovery. "
                             "If B&W -> colorize only with 1940-1970 Kodak Portra 400 / Ektachrome E100 calibrated tones, otherwise keep authentic sepia/silver gelatin. "
-                            "Re-photographed with Hasselblad 503CW + Carl Zeiss Planar 80mm f/2.8 T* on Portra 400VC, soft north window light 1940-1970 era, 1000% identity lock, no modern retouch, signature \"Carlos Ernesto\" bottom-right")
+                            "Re-photographed with Hasselblad 503CW + Carl Zeiss Planar 80mm f/2.8 T* on Portra 400VC, soft north window light 1940-1970 era, 1000% identity lock, no modern retouch, signature \"Carlos Ernesto\" bottom-right"
     st.code(restauracion_nuclear + negative_full, language="text")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v7.3 Nuclear Ultimate 2025 - 1000% Inviolable - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v7.5 Nuclear Ultimate 2025 - 1000% Inviolable - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
