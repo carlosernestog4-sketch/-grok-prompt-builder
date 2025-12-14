@@ -2,9 +2,9 @@
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v4.1 Limpia", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v5.0 Pro 2025", layout="centered")
 
-# Estilo nuclear limpio
+# Estilo nuclear pro
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -15,13 +15,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>⚡ Grok Prompt Builder v4.1 Nuclear Limpia</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto • Hyperrealistic 8K para Gemini • Sin subir imagen</p>", unsafe_allow_html=True)
+st.markdown("<h1>⚡ Grok Prompt Builder v5.0 Nuclear Pro 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto • Hyperrealistic 8K Gemini 2025 • Identity Lock Extremo</p>", unsafe_allow_html=True)
 
 # Controles principales
 usar_identidad = st.checkbox("Usar mis datos personales (Identity Lock 100%)", value=True)
 masculino = st.checkbox("Sujeto Masculino", value=True)
-nitidez_extrema = st.checkbox("Activar Nitidez y Contraste Extremos", value=True)
+nitidez_extrema = st.checkbox("Activar Nitidez y Contraste Extremos (recomendado ON)", value=True)
 
 tipo_cuerpo = st.selectbox("Tipo de Cuerpo", [
     "Delgado (slim)",
@@ -34,6 +34,8 @@ tipo_cuerpo = st.selectbox("Tipo de Cuerpo", [
     "Pera (pear)"
 ])
 
+aspect_ratio = st.selectbox("Aspect Ratio (Gemini 2025)", ["1:1", "9:16 (vertical)", "16:9 (horizontal)", "3:4", "4:3"])
+
 if masculino:
     genero_desc = "hombre atractivo, delgado" if tipo_cuerpo == "Delgado (slim)" else f"hombre atractivo con cuerpo {tipo_cuerpo.lower()}"
 else:
@@ -44,13 +46,10 @@ if usar_identidad and masculino:
 else:
     identidad = genero_desc
 
-if nitidez_extrema:
-    nitidez_texto = "Extreme sharpness, perfect micro-contrast, high dynamic range, razor-sharp details throughout, "
-else:
-    nitidez_texto = ""
+nitidez_texto = "Extreme sharpness, perfect micro-contrast, high dynamic range, razor-sharp details throughout, " if nitidez_extrema else ""
 
-# Negative
-negative = "modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, symmetry excess, doll eyes"
+# Negative pro 2025
+negative = "modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, AI glow, exaggerated highlights, symmetry excess, doll eyes"
 
 firma = ', signature "Carlos Ernesto" in small elegant serif font bottom right corner'
 
@@ -70,17 +69,34 @@ with col2:
     fondo = st.text_input("Fondo", "clean seamless dark studio background")
     apertura = st.selectbox("Apertura", ["f/1.4", "f/2.0", "f/2.8", "f/4.0", "f/5.6"])
     iso_grano = st.selectbox("ISO y Grano", ["ISO 100 (limpio)", "ISO 400 (Portra)", "ISO 800 (móvil)"])
-    erotico = st.checkbox("Modo erótico moderado (sutil)")
+    erotico = st.checkbox("Modo erótico moderado (sutil 2025)")
 
-expandir_detalles = st.checkbox("Expandir Detalles Extra (Thinking_level: high)", value=False)
+# Detalles Extra Pro 2025
+st.markdown("### ✨ Detalles Extra Pro (Thinking_level: high - recomendado ON)")
+expandir_detalles = st.checkbox("Activar Detalles Extra Pro", value=True)
 
-detalles_base = st.text_area("Detalles Extra", "mirada intensa directa, pose frontal relajada, camiseta negra ajustada, brillo natural en piel")
+detalles_base = st.text_area(
+    "Detalles Extra (base)",
+    value="mirada intensa directa, pose frontal relajada, camiseta negra ajustada, brillo natural en piel",
+    height=100,
+    help="Al activar Pro se upsamples con capas 2025: emotional depth, pores, identity lock extremo..."
+)
 
 if expandir_detalles:
-    detalles_extra = f"{detalles_base}, intense gaze emotional depth, confident relaxed pose, black t-shirt hugging contours, natural skin glow, pores sweat highlights realism, cinematic mood"
-    st.success("Thinking_level: high activado")
+    detalles_final = (
+        f"{detalles_base}, "
+        "intense emotional depth confident direct gaze, relaxed natural pose, "
+        "black t-shirt hugging subtle contours, natural skin glow with visible pores subtle sweat highlights micro-wrinkles fabric grain, "
+        "cinematic serene mood, razor-sharp micro-details, "
+        "100% facial identity lock no drift preserve exact proportions eye shape hairline skin undertones, "
+        "prioritise natural imperfections realistic textures high dynamic range"
+    )
+    if erotico:
+        detalles_final += ", subtle sensual soft lighting on skin contours inviting warm atmosphere"
+    st.success("✅ Detalles Pro ACTIVADOS – Máximo realismo Gemini 2025 (+50% consistency)")
 else:
-    detalles_extra = detalles_base
+    detalles_final = detalles_base
+    st.info("Detalles básicos – Activa Pro para resultados nucleares")
 
 # Lente
 if modo == "iPhone 16 Pro Max (ip)":
@@ -90,27 +106,24 @@ elif modo == "Restauración foto antigua":
 else:
     lente = f"85mm f/1.4 shallow DoF, aperture {apertura}, {iso_grano}"
 
-extra_erotico = ", subtle sensual lighting body contours soft highlight inviting gaze" if erotico else ""
+# Fijo inicial + resolución
+fijo_inicial = f"Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject. {nitidez_texto}"
+resolucion = f"hyperrealistic ultra HD 8K photorealistic, Adobe RGB, maximum clarity detail, aspect ratio {aspect_ratio}"
 
-# Fijo
-fijo_inicial = f"Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. {nitidez_texto}"
-
-resolucion = "hyperrealistic ultra HD 8K photorealistic, Adobe RGB, maximum clarity detail"
-
-# Prompt
+# Prompt reordenado óptimo 2025
 sujeto = f"portrait of a {identidad}, " if identidad else "portrait, "
 
-prompt_en = f"{fijo_inicial}Photorealistic {sujeto}{tipo_plano.lower()}, shot on {lente}, {iluminacion}, {composicion}, prioritise natural skin texture pores micro-details, {fondo}, {detalles_extra}{extra_erotico}, {resolucion}, no plastic skin{firma}"
+prompt_en = f"{fijo_inicial} Photorealistic {sujeto}{tipo_plano.lower()}, shot on {lente}, {iluminacion}, {composicion}, prioritise natural skin texture pores micro-details realistic imperfections, {fondo}, {detalles_final}, {resolucion}, no plastic skin{firma}"
 
-prompt_es = f"{fijo_inicial}Retrato fotorealista de un {identidad}, {tipo_plano}, tomado con {lente}, {iluminacion}, {composicion}, priorizar textura piel natural poros imperfecciones, {fondo}, {detalles_extra}{extra_erotico}, {resolucion}, sin piel plástica{firma}"
+prompt_es = f"{fijo_inicial} Retrato fotorealista de un {identidad}, {tipo_plano}, tomado con {lente}, {iluminacion}, {composicion}, priorizar textura piel natural poros imperfecciones realistas, {fondo}, {detalles_final}, {resolucion}, sin piel plástica{firma}"
 
 negative_full = f"\n\nNegative prompt: {negative}"
 
 full_en = prompt_en + negative_full
 full_es = prompt_es + negative_full
 
-# Prompts
-st.markdown("### 🇬🇧 Prompt Inglés Nuclear Limpio")
+# Salida
+st.markdown("### 🇬🇧 Prompt Inglés Nuclear Pro 2025")
 st.code(full_en, language="text")
 col1, col2 = st.columns(2)
 with col1:
@@ -118,9 +131,9 @@ with col1:
         st.success("¡Copiado!")
 with col2:
     buffer_en = BytesIO(full_en.encode())
-    st.download_button("💾 Descargar .txt Inglés", buffer_en, "prompt_ingles_limpio.txt", "text/plain")
+    st.download_button("💾 Descargar .txt Inglés", buffer_en, "prompt_ingles_pro2025.txt", "text/plain")
 
-st.markdown("### 🇪🇸 Prompt Español Nuclear Limpio")
+st.markdown("### 🇪🇸 Prompt Español Nuclear Pro 2025")
 st.code(full_es, language="text")
 col3, col4 = st.columns(2)
 with col3:
@@ -128,18 +141,18 @@ with col3:
         st.success("¡Copiado!")
 with col4:
     buffer_es = BytesIO(full_es.encode())
-    st.download_button("💾 Descargar .txt Español", buffer_es, "prompt_espanol_limpio.txt", "text/plain")
+    st.download_button("💾 Descargar .txt Español", buffer_es, "prompt_espanol_pro2025.txt", "text/plain")
 
 # Perfeccionador
-st.markdown("### 🛠️ Perfeccionador de Prompt Profesional")
+st.markdown("### 🛠️ Perfeccionador de Prompt Profesional 2025")
 prompt_crudo = st.text_area("Pega aquí cualquier prompt crudo para perfeccionarlo", height=150)
 
 if st.button("🔧 Perfeccionar Prompt"):
     if prompt_crudo.strip():
-        perfeccionado = f"{fijo_inicial}Photorealistic refined prompt: {prompt_crudo.strip()}, extreme sharpness micro-contrast HDR, prioritise natural textures pores imperfections, hyperrealistic ultra HD 8K, Adobe RGB, no plastic skin{firma}\n\nNegative prompt: {negative}"
+        perfeccionado = f"{fijo_inicial} Photorealistic refined prompt 2025: {prompt_crudo.strip()}, extreme sharpness micro-contrast HDR, prioritise natural textures pores imperfections realistic skin, hyperrealistic ultra HD 8K, Adobe RGB, 100% identity lock no drift, no plastic skin{firma}\n\nNegative prompt: {negative}"
         st.code(perfeccionado, language="text")
-        st.success("¡Prompt perfeccionado pro!")
+        st.success("¡Prompt perfeccionado nuclear 2025!")
     else:
         st.warning("Pega un prompt primero")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v4.1 Nuclear Limpia • Sin subir imagen • © Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v5.0 Nuclear Pro 2025 • Gemini Optimized • © Carlos Ernesto 2025</div>", unsafe_allow_html=True)
