@@ -2,9 +2,9 @@
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v7.8 Nuclear 2025", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v7.9 Nuclear 2025", layout="centered")
 
-# Estilo v7.8
+# Estilo v7.9
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -15,22 +15,21 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>Grok Prompt Builder v7.8 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - 1000% Identity Lock Absoluto - Copia con JavaScript Seguro</p>", unsafe_allow_html=True)
+st.markdown("<h1>Grok Prompt Builder v7.9 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - Nitidez, Contraste e Identity Siempre ON</p>", unsafe_allow_html=True)
 
 # Texto fijo obligatorio al inicio
 texto_fijo_inicio = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Firma en la parte inferior derecha de Carlos Ernesto. "
 
-# Checkboxes nitidez y contraste extremo
-nitidez_extrema = st.checkbox("Activar nitidez extrema profesional (recomendado ON)", value=True)
-contraste_extremo = st.checkbox("Activar contraste extremo profesional (recomendado ON)", value=True)
+# Botones siempre activos por defecto
+nitidez_extrema = st.checkbox("Activar nitidez extrema profesional (siempre ON)", value=True)
+contraste_extremo = st.checkbox("Activar contraste extremo profesional (siempre ON)", value=True)
+usar_lock_absoluto = st.checkbox("Activar IDENTIDAD LOCK ABSOLUTO v7 (1000% inviolable - siempre ON)", value=True)
 
 nitidez_texto = "extreme sharpness, razor-sharp micro-details, perfect micro-contrast, high dynamic range throughout, " if nitidez_extrema else ""
 contraste_texto = "perfect shadow/highlight recovery, rich deep blacks, bright highlights, cinematic contrast curve, " if contraste_extremo else ""
 
-# 1. IDENTIDAD LOCK ABSOLUTO v7
-usar_lock_absoluto = st.checkbox("Activar IDENTIDAD LOCK ABSOLUTO v7 (1000% inviolable - recomendado ON)", value=True)
-
+# Género y tipo de cuerpo (solo si desactivas lock)
 if not usar_lock_absoluto:
     masculino = st.checkbox("Sujeto Masculino", value=True)
     tipo_cuerpo = st.selectbox("Tipo de Cuerpo", [
@@ -64,10 +63,10 @@ else:
         identidad_final = f"attractive woman with {tipo_cuerpo.lower().replace(' (slim)', '').replace(' (athletic)', '').replace(' (average)', '')} body"
     st.info("Modo flexible activado - solo género y tipo de cuerpo")
 
-# 2. FIRMA OBLIGATORIA v7
+# Firma obligatoria
 firma_obligatoria = ', signature "Carlos Ernesto" in Cormorant Garamond Italic 48 pt, 78% opacity, pure white (#FFFFFF) on dark backgrounds / pure black (#000000) on light, positioned exactly 40 px from right edge and 40 px from bottom edge, drop shadow 15% opacity radius 2 px'
 
-# 3. NEGATIVE PROMPT NUCLEAR v7
+# Negative nuclear
 negative_nuclear = ("worst quality, low quality, normal quality, lowres, bad anatomy, bad hands, missing fingers, extra digits, fewer digits, cropped, jpeg artifacts, signature, watermark, username, blurry, out of focus, censorship, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, bad proportions, extra limbs, cloned face, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, cross-eyed, mutated, bad body, bad feet, disfigured, gross proportions, modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, symmetry excess, doll eyes, text, logo, watermark, overexposed, underexposed")
 
 # Configuración Nuclear v7
@@ -97,10 +96,10 @@ with col1:
 with col2:
     composicion_pro = st.selectbox("Composicion v7", ["rule of thirds golden ratio eye-level, subject 75% height (85% full body)", "centred symmetric", "low-angle dramatic", "high-angle natural"])
     fondo = st.text_input("Fondo v7", "clean seamless dark studio background")
-    usar_formula_nuclear = st.checkbox("Activar FORMULA NUCLEAR 2025 base (nunca falla)", value=True)
+    usar_formula_nuclear = st.checkbox("Activar FORMULA NUCLEAR 2025 base (nunca falla)", value=False)  # Apagado por defecto
 
-# Detalles Extra Pro v7
-expandir_detalles = st.checkbox("Activar Detalles Extra Pro v7", value=True)
+# Detalles Extra Pro v7 (apagado por defecto)
+expandir_detalles = st.checkbox("Activar Detalles Extra Pro v7", value=False)
 detalles_base = st.text_area("Detalles Extra base v7", value="mirada intensa directa, pose frontal relajada, camiseta negra ajustada, brillo natural en piel")
 
 if expandir_detalles:
@@ -109,7 +108,7 @@ if expandir_detalles:
 else:
     detalles_final = detalles_base
 
-# 4. FORMULA NUCLEAR 2025
+# FORMULA NUCLEAR 2025
 if usar_formula_nuclear:
     base_nuclear = ("Ultra photorealistic 8K 16-bit RAW museum-grade portrait of exact same 31-year-old slim man 1.65m as identity reference, 1000% identity lock no drift ever, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM at f/1.8 (or f/4 full body), 1/250s, ISO 100, 14-bit CR3, "
                     "3-point professional studio lighting: 120cm octabox key light 45 degree camera right at eye height + 20 degree grid, silver fill reflector left side 2:1 ratio, subtle 30cm stripbox rim light 160 degree behind, hair light 20 degree grid top-back, all Profoto B10X+ 5600K CRI 98+, "
@@ -131,7 +130,7 @@ full_en = prompt_en + negative_full
 full_es = prompt_es + negative_full
 
 # Salida principal
-st.markdown("### Prompt Ingles Nuclear v7.8")
+st.markdown("### Prompt Ingles Nuclear v7.9")
 st.code(full_en, language="text")
 col1, col2 = st.columns(2)
 with col1:
@@ -144,9 +143,9 @@ with col1:
         st.success("Prompt Ingles copiado al portapapeles!")
 with col2:
     buffer_en = BytesIO(full_en.encode())
-    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v7.8.txt", "text/plain")
+    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v7.9.txt", "text/plain")
 
-st.markdown("### Prompt Espanol Nuclear v7.8")
+st.markdown("### Prompt Espanol Nuclear v7.9")
 st.code(full_es, language="text")
 col3, col4 = st.columns(2)
 with col3:
@@ -159,10 +158,10 @@ with col3:
         st.success("Prompt Espanol copiado al portapapeles!")
 with col4:
     buffer_es = BytesIO(full_es.encode())
-    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v7.8.txt", "text/plain")
+    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v7.9.txt", "text/plain")
 
-# Perfeccionador profesional (con JavaScript copia)
-st.markdown("### Perfeccionador de Prompt Profesional v7.8")
+# Perfeccionador profesional
+st.markdown("### Perfeccionador de Prompt Profesional v7.9")
 prompt_crudo = st.text_area("Pega aquí cualquier prompt crudo para aumentarlo con palabras técnicas profesionales", height=150, placeholder="Ej: un hombre mirando a cámara...")
 
 if st.button("Aumentar con palabras técnicas profesionales"):
@@ -179,7 +178,7 @@ if st.button("Aumentar con palabras técnicas profesionales"):
     else:
         st.warning("Pega un prompt primero")
 
-# Restauracion v7 (indentacion perfecta)
+# Restauracion v7
 if st.button("Generar Plantilla Restauracion Nuclear v7"):
     restauracion_nuclear = (
         f"{texto_fijo_inicio}"
@@ -190,4 +189,4 @@ if st.button("Generar Plantilla Restauracion Nuclear v7"):
     )
     st.code(restauracion_nuclear + negative_full, language="text")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v7.8 Nuclear Ultimate 2025 - 1000% Inviolable - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v7.9 Nuclear Ultimate 2025 - 1000% Inviolable - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
