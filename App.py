@@ -1,158 +1,46 @@
 
-import streamlit as st
-from io import BytesIO
+Aquí tienes la **AGENDA GUARDADA v7 NUCLEAR** completa, separada texto por texto, lista para copiar uno por uno donde quieras (Notion, Google Docs, TXT, etc.).
 
-st.set_page_config(page_title="Grok Prompt Builder v5.0 Pro 2025", layout="centered")
+1. **IDENTIDAD LOCK ABSOLUTO – 1000 % INVIOLABLE**  
+Exact same person, 31 years old, 1.650 m barefoot height, 59–61 kg, BMI 21.8, lean ectomorph body, zero visible muscle definition, flat stomach, narrow shoulders 39 cm biacromial, long slim arms (arm span 1.70 m), narrow wrists 16 cm, long legs, visible thigh gap. Face: perfect rectangle 19.5 cm length × 14 cm width, strong square jaw 120° gonial angle, high defined cheekbones, straight medium nose 5.2 cm length, thin upper lip 8 mm, medium lower lip, philtrum 1.4 cm. Eyes: dark green (hex #1A3C34), almond shape 3.2 cm width, slightly hooded upper lid, subtle lower eye bags, very dark limbal ring, inter-pupillary distance 6.3 cm, slight downward outer canthus. Eyebrows: thick, dark brown #1C110A, straight with natural arch, 0.9 cm thickness. Hair: military high & tight buzzcut 1–2 mm all over, dark brown #1C110A, receding temples NW2, sharp widow’s peak. Skin: Fitzpatrick II–III, warm Mediterranean undertone, L*a*b* = L68 a+10 b+18, visible pores especially nose/cheeks, subtle freckles on shoulders, two small moles (left cheekbone + right jawline). Tattoos: large detailed blackwork sacred geometry + lion on left pectoral (exact reference preserved), small minimalist coordinates tattoo inner left forearm. Always clean-shaven, zero stubble, neutral closed-mouth expression, direct gaze to camera.
 
-# Estilo nuclear pro
-st.markdown("""
-<style>
-    .main {background-color: #0a0e17; color: #e0e0e0;}
-    h1 {color: #00d4ff; text-align: center; font-size: 2.8rem;}
-    .stButton>button {background-color: #00d4ff; color: black; font-weight: bold; border-radius: 10px; height: 3em;}
-    .stDownloadButton>button {background-color: #1f77b4; color: white;}
-    .footer {text-align: center; margin-top: 60px; font-size: 0.9rem; color: #666;}
-</style>
-""", unsafe_allow_html=True)
+2. **FIRMA OBLIGATORIA – PARÁMETROS EXACTOS**  
+"Carlos Ernesto" in Cormorant Garamond Italic 48 pt, 78 % opacity, pure white (#FFFFFF) on dark backgrounds / pure black (#000000) on light, positioned exactly 40 px from right edge and 40 px from bottom edge, drop shadow 15 % opacity radius 2 px.
 
-st.markdown("<h1>⚡ Grok Prompt Builder v5.0 Nuclear Pro 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto • Hyperrealistic 8K Gemini 2025 • Identity Lock Extremo</p>", unsafe_allow_html=True)
+3. **NEGATIVE PROMPT NUCLEAR 2025 (312 tokens)**  
+worst quality, low quality, normal quality, lowres, bad anatomy, bad hands, missing fingers, extra digits, fewer digits, cropped, jpeg artifacts, signature, watermark, username, blurry, out of focus, censorship, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, bad proportions, extra limbs, cloned face, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, cross-eyed, mutated, bad body, bad feet, disfigured, gross proportions, modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, symmetry excess, doll eyes, text, logo, watermark, overexposed, underexposed
 
-# Controles principales
-usar_identidad = st.checkbox("Usar mis datos personales (Identity Lock 100%)", value=True)
-masculino = st.checkbox("Sujeto Masculino", value=True)
-nitidez_extrema = st.checkbox("Activar Nitidez y Contraste Extremos (recomendado ON)", value=True)
+4. **FÓRMULA NUCLEAR 2025 – NUNCA FALLA**  
+Ultra photorealistic 8K 16-bit RAW museum-grade portrait of exact same 31-year-old slim man 1.65m as identity reference, 1000% identity lock no drift ever, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM at f/1.8 (or f/4 full body), 1/250s, ISO 100, 14-bit CR3, 3-point professional studio lighting: 120cm octabox key light 45° camera right at eye height + 20° grid, silver fill reflector left side 2:1 ratio, subtle 30cm stripbox rim light 160° behind, hair light 20° grid top-back, all Profoto B10X+ 5600K CRI 98+, soft wrap-around shadows with visible micro-shadows under cheekbones and jaw, natural rectangular catchlights, rule of thirds golden ratio, eye-level angle, subject exactly 75% vertical frame height (85% full body), creamy bokeh, micro-contrast preserved, output sharpening radius 0.65px 300 DPI, subtle Kodak Tri-X 400 grain 3.5%, color graded custom Adobe RGB LUT “Portra 400 Golden Hour v3”, hyperrealistic visible pores even at 1:1, zero plastic skin, zero beauty retouch, signature "Carlos Ernesto" bottom-right --ar 3:4 --v 6 --stylize 180 --q 2 --chaos 0
 
-tipo_cuerpo = st.selectbox("Tipo de Cuerpo", [
-    "Delgado (slim)",
-    "Atlético (athletic)",
-    "Medio (average)",
-    "Curvy (curvy)",
-    "Reloj de arena (hourglass)",
-    "Triángulo invertido (inverted triangle)",
-    "Rectangular (rectangle)",
-    "Pera (pear)"
-])
+5. **VARIACIONES DE LENTE EXACTAS**  
+- Primer plano extremo → RF 85mm f/1.2 @ f/1.8  
+- Retrato clásico → RF 85mm f/1.2 @ f/2.8  
+- Plano medio → RF 50mm f/1.2 @ f/4  
+- Plano completo → RF 35mm f/1.4 @ f/5.6  
+- iPhone 16 Pro Max → 48MP main 1x, simulated f/1.6, Dolby Vision HDR
 
-aspect_ratio = st.selectbox("Aspect Ratio (Gemini 2025)", ["1:1", "9:16 (vertical)", "16:9 (horizontal)", "3:4", "4:3"])
+6. **PLANTILLA RESTAURACIÓN NUCLEAR 8K**  
+Museum-grade restoration of this damaged historical photograph to 8K 16-bit: surgically remove every dust speck, scratch, fold, crease, chemical stain, water damage, silvering, yellowing and fading while preserving 100% original film grain structure and chemical fingerprint. Forensic pixel-perfect reconstruction of missing areas. Frequency separation sharpening radius 0.7px, local contrast +8, full dynamic range recovery. If B&W → colorize only with 1940–1970 Kodak Portra 400 / Ektachrome E100 calibrated tones, otherwise keep authentic sepia/silver gelatin. Re-photographed with Hasselblad 503CW + Carl Zeiss Planar 80mm f/2.8 T* on Portra 400VC, soft north window light 1940–1970 era, 1000% identity lock, no modern retouch, signature "Carlos Ernesto" bottom-right
 
-if masculino:
-    genero_desc = "hombre atractivo, delgado" if tipo_cuerpo == "Delgado (slim)" else f"hombre atractivo con cuerpo {tipo_cuerpo.lower()}"
-else:
-    genero_desc = "mujer atractiva, delgada" if tipo_cuerpo == "Delgado (slim)" else f"mujer atractiva con cuerpo {tipo_cuerpo.lower()}"
+7. **ENCUADRES INFALIBLES**  
+- Primer plano → extreme close-up crop mid-forehead to chin, face 95-100% height, eyes on upper third  
+- Plano medio → crop top of head to waist, subject 70-80% height, hands visible if natural  
+- Plano completo → full body head to toe + 10-15 cm space for feet, --ar 9:16
 
-if usar_identidad and masculino:
-    identidad = "Hombre de 31 años, 1.65m, delgado atractivo con poca masa muscular, ojos verdes oscuro almendrados ligeramente hundidos, cabello muy corto rapado militar oscuro, piel media bronceada Fitzpatrick II-III con poros visibles y microtextura realista, sin barba, afeitado limpio"
-else:
-    identidad = genero_desc
+8. **ILUMINACIÓN PROFESIONAL ESTÁNDAR**  
+3-point + rim + hair light: 120cm octabox key 45° camera right eye height 20° grid, silver fill left 2:1, 30cm stripbox rim 160°, hair light top-back 20° grid, all 5600K CRI 98+
 
-nitidez_texto = "Extreme sharpness, perfect micro-contrast, high dynamic range, razor-sharp details throughout, " if nitidez_extrema else ""
+9. **COMANDOS RÁPIDOS**  
+- P → top 10 prompts mundiales  
+- pr → crear prompt (solo texto)  
+- ip → iPhone 16 Pro Max máximo realismo  
+- e → extraer prompt técnico de adjunta  
+- restore → restauración museo  
+- clima → forecast 7 días + auto-luz  
+- Fcb / resumen / une → todo automático
 
-# Negative pro 2025
-negative = "modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, AI glow, exaggerated highlights, symmetry excess, doll eyes"
-
-firma = ', signature "Carlos Ernesto" in small elegant serif font bottom right corner'
-
-# Configuración Nuclear
-st.markdown("### ⚙️ Configuración Nuclear")
-
-col1, col2 = st.columns(2)
-with col1:
-    tipo_plano = st.selectbox("Tipo de Plano", [
-        "Plano extremo", "Primerísimo primer plano", "Primer plano", "Plano medio corto", "Plano americano", "Plano medio", "Plano general", "Gran plano general"
-    ])
-    modo = st.selectbox("Modo Especial", ["Profesional 85mm", "iPhone 16 Pro Max (ip)", "Restauración foto antigua"])
-    iluminacion = st.selectbox("Iluminación", ["soft diffused daylight golden hour, 3-point key 45°", "neutral daylight HDR", "overcast soft light", "studio softbox", "soft window light 1940-1970"])
-
-with col2:
-    composicion = st.selectbox("Composición", ["rule-of-thirds eye-level", "centred symmetric", "low-angle dramatic", "high-angle natural"])
-    fondo = st.text_input("Fondo", "clean seamless dark studio background")
-    apertura = st.selectbox("Apertura", ["f/1.4", "f/2.0", "f/2.8", "f/4.0", "f/5.6"])
-    iso_grano = st.selectbox("ISO y Grano", ["ISO 100 (limpio)", "ISO 400 (Portra)", "ISO 800 (móvil)"])
-    erotico = st.checkbox("Modo erótico moderado (sutil 2025)")
-
-# Detalles Extra Pro 2025
-st.markdown("### ✨ Detalles Extra Pro (Thinking_level: high - recomendado ON)")
-expandir_detalles = st.checkbox("Activar Detalles Extra Pro", value=True)
-
-detalles_base = st.text_area(
-    "Detalles Extra (base)",
-    value="mirada intensa directa, pose frontal relajada, camiseta negra ajustada, brillo natural en piel",
-    height=100,
-    help="Al activar Pro se upsamples con capas 2025: emotional depth, pores, identity lock extremo..."
-)
-
-if expandir_detalles:
-    detalles_final = (
-        f"{detalles_base}, "
-        "intense emotional depth confident direct gaze, relaxed natural pose, "
-        "black t-shirt hugging subtle contours, natural skin glow with visible pores subtle sweat highlights micro-wrinkles fabric grain, "
-        "cinematic serene mood, razor-sharp micro-details, "
-        "100% facial identity lock no drift preserve exact proportions eye shape hairline skin undertones, "
-        "prioritise natural imperfections realistic textures high dynamic range"
-    )
-    if erotico:
-        detalles_final += ", subtle sensual soft lighting on skin contours inviting warm atmosphere"
-    st.success("✅ Detalles Pro ACTIVADOS – Máximo realismo Gemini 2025 (+50% consistency)")
-else:
-    detalles_final = detalles_base
-    st.info("Detalles básicos – Activa Pro para resultados nucleares")
-
-# Lente
-if modo == "iPhone 16 Pro Max (ip)":
-    lente = f"iPhone 16 Pro Max selfie style, mobile grain {iso_grano}, aperture {apertura}"
-elif modo == "Restauración foto antigua":
-    lente = f"Hasselblad 503CW + 80mm f2.8 Kodak Portra 400, window light 1940-1970 preserve grain extreme sharpness, {iso_grano}"
-else:
-    lente = f"85mm f/1.4 shallow DoF, aperture {apertura}, {iso_grano}"
-
-# Fijo inicial + resolución
-fijo_inicial = f"Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject. {nitidez_texto}"
-resolucion = f"hyperrealistic ultra HD 8K photorealistic, Adobe RGB, maximum clarity detail, aspect ratio {aspect_ratio}"
-
-# Prompt reordenado óptimo 2025
-sujeto = f"portrait of a {identidad}, " if identidad else "portrait, "
-
-prompt_en = f"{fijo_inicial} Photorealistic {sujeto}{tipo_plano.lower()}, shot on {lente}, {iluminacion}, {composicion}, prioritise natural skin texture pores micro-details realistic imperfections, {fondo}, {detalles_final}, {resolucion}, no plastic skin{firma}"
-
-prompt_es = f"{fijo_inicial} Retrato fotorealista de un {identidad}, {tipo_plano}, tomado con {lente}, {iluminacion}, {composicion}, priorizar textura piel natural poros imperfecciones realistas, {fondo}, {detalles_final}, {resolucion}, sin piel plástica{firma}"
-
-negative_full = f"\n\nNegative prompt: {negative}"
-
-full_en = prompt_en + negative_full
-full_es = prompt_es + negative_full
-
-# Salida
-st.markdown("### 🇬🇧 Prompt Inglés Nuclear Pro 2025")
-st.code(full_en, language="text")
-col1, col2 = st.columns(2)
-with col1:
-    if st.button("📋 Copiar Inglés"):
-        st.success("¡Copiado!")
-with col2:
-    buffer_en = BytesIO(full_en.encode())
-    st.download_button("💾 Descargar .txt Inglés", buffer_en, "prompt_ingles_pro2025.txt", "text/plain")
-
-st.markdown("### 🇪🇸 Prompt Español Nuclear Pro 2025")
-st.code(full_es, language="text")
-col3, col4 = st.columns(2)
-with col3:
-    if st.button("📋 Copiar Español"):
-        st.success("¡Copiado!")
-with col4:
-    buffer_es = BytesIO(full_es.encode())
-    st.download_button("💾 Descargar .txt Español", buffer_es, "prompt_espanol_pro2025.txt", "text/plain")
-
-# Perfeccionador
-st.markdown("### 🛠️ Perfeccionador de Prompt Profesional 2025")
-prompt_crudo = st.text_area("Pega aquí cualquier prompt crudo para perfeccionarlo", height=150)
-
-if st.button("🔧 Perfeccionar Prompt"):
-    if prompt_crudo.strip():
-        perfeccionado = f"{fijo_inicial} Photorealistic refined prompt 2025: {prompt_crudo.strip()}, extreme sharpness micro-contrast HDR, prioritise natural textures pores imperfections realistic skin, hyperrealistic ultra HD 8K, Adobe RGB, 100% identity lock no drift, no plastic skin{firma}\n\nNegative prompt: {negative}"
-        st.code(perfeccionado, language="text")
-        st.success("¡Prompt perfeccionado nuclear 2025!")
-    else:
-        st.warning("Pega un prompt primero")
-
-st.markdown("<div class='footer'>Grok Prompt Builder v5.0 Nuclear Pro 2025 • Gemini Optimized • © Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+Listo.  
+Son exactamente 9 bloques de texto.  
+Copia cada uno por separado o todos juntos, como prefieras.  
+Esta es la versión que nunca más necesitarás actualizar.
