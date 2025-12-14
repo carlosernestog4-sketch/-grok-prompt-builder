@@ -2,9 +2,9 @@
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v3.7 Nuclear Corregida", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v3.8 Nuclear Pro", layout="centered")
 
-# Estilo nuclear
+# Estilo nuclear pro
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -17,17 +17,24 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>⚡ Grok Prompt Builder v3.7 Nuclear Forense Expansivo</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto • Hyperrealistic 8K para Gemini • Sin errores duplicados</p>", unsafe_allow_html=True)
+st.markdown("<h1>⚡ Grok Prompt Builder v3.8 Nuclear Forense Pro</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto • Hyperrealistic 8K para Gemini • Controles Profesionales</p>", unsafe_allow_html=True)
 
-# Identity opcional
+# Botones opcionales
 usar_identidad = st.checkbox("Usar mis datos personales (Identity Lock 100%)", value=True)
+nitidez_extrema = st.checkbox("Activar Nitidez y Contraste Extremos", value=True)
 
 if usar_identidad:
     identidad = "Hombre de 31 años, 1.65m, delgado atractivo con poca masa muscular, ojos verdes oscuro almendrados ligeramente hundidos, cabello muy corto rapado militar oscuro, piel media bronceada Fitzpatrick II-III con poros visibles y microtextura realista, sin barba, afeitado limpio"
 else:
     identidad = ""
     st.info("Identity Lock desactivado")
+
+if nitidez_extrema:
+    nitidez_texto = "Extreme sharpness, perfect micro-contrast, high dynamic range, razor-sharp details throughout, "
+else:
+    nitidez_texto = ""
+    st.info("Nitidez y contraste extremos desactivados – Prompt más suave")
 
 # Negative
 negative = "modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, symmetry excess, doll eyes"
@@ -66,7 +73,7 @@ if uploaded_file:
         st.markdown("</div>", unsafe_allow_html=True)
         
         if st.button("📋 Copiar Análisis Forense"):
-            st.success("¡Copiado al portapapeles!")
+            st.success("¡Copiado!")
 
     analisis_forense = "extreme close-up frontal shot, eye-level, tight framing razor-sharp, soft key light 45° left perfect contrast, shallow DoF f/1.4, clean dark background, black fitted t-shirt, neutral intense gaze, extreme sharpness micro-contrast"
 
@@ -107,11 +114,11 @@ detalles_base = st.text_area("Detalles Extra", "mirada intensa directa, pose fro
 
 if expandir_detalles:
     detalles_extra = f"{detalles_base}, intense gaze emotional depth, confident relaxed pose natural alignment, black t-shirt hugging contours fabric texture shadows, natural skin glow light interaction, pores sweat highlights realism, cinematic tension mood"
-    st.success("Thinking_level: high activado – Detalles expandidos")
+    st.success("Thinking_level: high activado")
 else:
     detalles_extra = detalles_base
 
-# Lente lógica
+# Lente
 if modo == "iPhone 16 Pro Max (ip)":
     lente = f"iPhone 16 Pro Max selfie style, mobile grain {iso_grano}, aperture {apertura}"
 elif modo == "Restauración foto antigua":
@@ -122,7 +129,7 @@ else:
 extra_erotico = ", subtle sensual lighting body contours soft highlight inviting gaze" if erotico else ""
 
 # Fijo
-fijo_inicial = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Extreme sharpness, perfect micro-contrast, high dynamic range, razor-sharp details throughout, "
+fijo_inicial = f"Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. {nitidez_texto}"
 
 resolucion = "hyperrealistic ultra HD 8K photorealistic, Adobe RGB, maximum clarity detail"
 
@@ -138,8 +145,8 @@ negative_full = f"\n\nNegative prompt: {negative}"
 full_en = prompt_en + negative_full
 full_es = prompt_es + negative_full
 
-# Prompts únicos
-st.markdown("### 🇬🇧 Prompt Inglés Nuclear")
+# Prompts
+st.markdown("### 🇬🇧 Prompt Inglés Nuclear Pro")
 st.code(full_en, language="text")
 col1, col2 = st.columns(2)
 with col1:
@@ -147,9 +154,9 @@ with col1:
         st.success("¡Copiado!")
 with col2:
     buffer_en = BytesIO(full_en.encode())
-    st.download_button("💾 Descargar .txt Inglés", buffer_en, "prompt_ingles.txt", "text/plain")
+    st.download_button("💾 Descargar .txt Inglés", buffer_en, "prompt_ingles_pro.txt", "text/plain")
 
-st.markdown("### 🇪🇸 Prompt Español Nuclear")
+st.markdown("### 🇪🇸 Prompt Español Nuclear Pro")
 st.code(full_es, language="text")
 col3, col4 = st.columns(2)
 with col3:
@@ -157,6 +164,6 @@ with col3:
         st.success("¡Copiado!")
 with col4:
     buffer_es = BytesIO(full_es.encode())
-    st.download_button("💾 Descargar .txt Español", buffer_es, "prompt_espanol.txt", "text/plain")
+    st.download_button("💾 Descargar .txt Español", buffer_es, "prompt_espanol_pro.txt", "text/plain")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v3.7 Nuclear Corregida • Sin errores • © Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v3.8 Nuclear Pro • Botón Nitidez/Contraste opcional • © Carlos Ernesto 2025</div>", unsafe_allow_html=True)
