@@ -2,9 +2,9 @@
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v7.2 Nuclear v7 Agenda 2025", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v7.3 Nuclear 2025", layout="centered")
 
-# Estilo v7.2
+# Estilo v7.3
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -15,8 +15,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>Grok Prompt Builder v7.2 Nuclear Ultimate v7 Agenda 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - 1000% Identity Lock Absoluto - Prompt Técnico Profesional Completo</p>", unsafe_allow_html=True)
+st.markdown("<h1>Grok Prompt Builder v7.3 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - 1000% Identity Lock Absoluto - Prompt Técnico Profesional</p>", unsafe_allow_html=True)
 
 # 1. IDENTIDAD LOCK ABSOLUTO v7
 usar_lock_absoluto = st.checkbox("Activar IDENTIDAD LOCK ABSOLUTO v7 (1000% inviolable - recomendado ON)", value=True)
@@ -63,7 +63,7 @@ firma_obligatoria = ', signature "Carlos Ernesto" in Cormorant Garamond Italic 4
 negative_nuclear = ("worst quality, low quality, normal quality, lowres, bad anatomy, bad hands, missing fingers, extra digits, fewer digits, cropped, jpeg artifacts, signature, watermark, username, blurry, out of focus, censorship, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, bad proportions, extra limbs, cloned face, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, cross-eyed, mutated, bad body, bad feet, disfigured, gross proportions, modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, symmetry excess, doll eyes, text, logo, watermark, overexposed, underexposed")
 
 # Configuración Nuclear v7
-st.markdown("### Configuracion Nuclear v7 Full Agenda")
+st.markdown("### Configuracion Nuclear v7")
 
 col1, col2 = st.columns(2)
 with col1:
@@ -101,7 +101,7 @@ if expandir_detalles:
 else:
     detalles_final = detalles_base
 
-# 4. FORMULA NUCLEAR 2025 (técnica completa)
+# 4. FORMULA NUCLEAR 2025
 if usar_formula_nuclear:
     base_nuclear = ("Ultra photorealistic 8K 16-bit RAW museum-grade portrait of exact same 31-year-old slim man 1.65m as identity reference, 1000% identity lock no drift ever, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM at f/1.8 (or f/4 full body), 1/250s, ISO 100, 14-bit CR3, "
                     "3-point professional studio lighting: 120cm octabox key light 45 degree camera right at eye height + 20 degree grid, silver fill reflector left side 2:1 ratio, subtle 30cm stripbox rim light 160 degree behind, hair light 20 degree grid top-back, all Profoto B10X+ 5600K CRI 98+, "
@@ -110,7 +110,7 @@ if usar_formula_nuclear:
 else:
     base_nuclear = "Generate a hyperrealistic 8K image without changing facial features hair or skin tone of the subject, extreme sharpness perfect micro-contrast high dynamic range razor-sharp details throughout"
 
-# Prompt final técnico profesional completo
+# Prompt final técnico profesional
 sujeto_final = f"photorealistic portrait of {identidad_final}, "
 
 prompt_en = f"{base_nuclear} {sujeto_final}{tipo_plano}, shot on Canon EOS R5 Mark II + {lente_exacta}, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
@@ -122,8 +122,8 @@ negative_full = f"\n\nNegative prompt: {negative_nuclear}"
 full_en = prompt_en + negative_full
 full_es = prompt_es + negative_full
 
-# Salida
-st.markdown("### Prompt Ingles Nuclear v7.2 Profesional Completo")
+# Salida principal
+st.markdown("### Prompt Ingles Nuclear v7.3 Profesional")
 st.code(full_en, language="text")
 col1, col2 = st.columns(2)
 with col1:
@@ -131,9 +131,9 @@ with col1:
         st.success("Copiado!")
 with col2:
     buffer_en = BytesIO(full_en.encode())
-    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v7.2.txt", "text/plain")
+    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v7.3.txt", "text/plain")
 
-st.markdown("### Prompt Espanol Nuclear v7.2 Profesional Completo")
+st.markdown("### Prompt Espanol Nuclear v7.3 Profesional")
 st.code(full_es, language="text")
 col3, col4 = st.columns(2)
 with col3:
@@ -141,7 +141,20 @@ with col3:
         st.success("Copiado!")
 with col4:
     buffer_es = BytesIO(full_es.encode())
-    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v7.2.txt", "text/plain")
+    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v7.3.txt", "text/plain")
+
+# PERFECCIONADOR PROFESIONAL (nuevo, justo lo que pedías)
+st.markdown("### Perfeccionador de Prompt Profesional v7.3")
+prompt_crudo = st.text_area("Pega aquí cualquier prompt crudo para aumentarlo con palabras técnicas profesionales", height=150, placeholder="Ej: un hombre mirando a cámara...")
+
+if st.button("Aumentar con palabras técnicas profesionales"):
+    if prompt_crudo.strip():
+        prompt_perfeccionado = f"{base_nuclear} {prompt_crudo.strip()}, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
+        full_perfeccionado = prompt_perfeccionado + negative_full
+        st.code(full_perfeccionado, language="text")
+        st.success("Prompt aumentado profesionalmente con toda la potencia v7.3!")
+    else:
+        st.warning("Pega un prompt primero")
 
 # Restauracion v7
 if st.button("Generar Plantilla Restauracion Nuclear v7"):
@@ -151,16 +164,4 @@ if st.button("Generar Plantilla Restauracion Nuclear v7"):
                             "Re-photographed with Hasselblad 503CW + Carl Zeiss Planar 80mm f/2.8 T* on Portra 400VC, soft north window light 1940-1970 era, 1000% identity lock, no modern retouch, signature \"Carlos Ernesto\" bottom-right")
     st.code(restauracion_nuclear + negative_full, language="text")
 
-# Comandos rapidos
-with st.expander("Comandos Rapidos v7 Agenda"):
-    st.markdown("""
-    - P -> top 10 prompts mundiales  
-    - pr -> crear prompt (solo texto)  
-    - ip -> iPhone 16 Pro Max maximo realismo  
-    - e -> extraer prompt tecnico de adjunta  
-    - restore -> restauracion museo (usa boton arriba)  
-    - clima -> forecast 7 dias + auto-luz  
-    - Fcb / resumen / une -> todo automatico
-    """)
-
-st.markdown("<div class='footer'>Grok Prompt Builder v7.2 Nuclear Ultimate v7 Agenda 2025 - 1000% Inviolable - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v7.3 Nuclear Ultimate 2025 - 1000% Inviolable - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
