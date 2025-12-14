@@ -1,9 +1,10 @@
+
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v20.1 Nuclear 2025", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v21.0 Nuclear 2025", layout="centered")
 
-# Estilo v20.1
+# Estilo v21.0
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -11,11 +12,25 @@ st.markdown("""
     .stButton>button {background-color: #00d4ff; color: black; font-weight: bold; border-radius: 10px; height: 3em;}
     .stDownloadButton>button {background-color: #1f77b4; color: white;}
     .footer {text-align: center; margin-top: 60px; font-size: 0.9rem; color: #666;}
+    /* Perfeccionador independiente - fondo azul oscuro profesional */
+    .perfeccionador-block {
+        background-color: #001f3f;
+        padding: 20px;
+        border-radius: 15px;
+        border: 2px solid #00d4ff;
+        margin-top: 40px;
+    }
+    .perfeccionador-title {
+        color: #00ffff;
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>Grok Prompt Builder v20.1 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - SyntaxError Corregido</p>", unsafe_allow_html=True)
+st.markdown("<h1>Grok Prompt Builder v21.0 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - Perfeccionador Visualmente Distinto</p>", unsafe_allow_html=True)
 
 # Texto fijo al inicio
 texto_fijo_inicio = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Firma en la parte inferior derecha de Carlos Ernesto. "
@@ -141,7 +156,7 @@ with col1:
         st.success("Prompt Ingles (principal) copiado al portapapeles!")
 with col2:
     buffer_en_main = BytesIO(full_en_main.encode())
-    st.download_button("Descargar .txt Ingles (principal)", buffer_en_main, "prompt_principal_ingles_v20.1.txt", "text/plain")
+    st.download_button("Descargar .txt Ingles (principal)", buffer_en_main, "prompt_principal_ingles_v21.0.txt", "text/plain")
 
 st.markdown("### Prompt Principal Espanol")
 st.code(full_es_main, language="text")
@@ -152,15 +167,16 @@ with col3:
         st.success("Prompt Espanol (principal) copiado al portapapeles!")
 with col4:
     buffer_es_main = BytesIO(full_es_main.encode())
-    st.download_button("Descargar .txt Espanol (principal)", buffer_es_main, "prompt_principal_espanol_v20.1.txt", "text/plain")
+    st.download_button("Descargar .txt Espanol (principal)", buffer_es_main, "prompt_principal_espanol_v21.0.txt", "text/plain")
 
 # ===============================
-# PERFECCIONADOR INDEPENDIENTE
+# PERFECCIONADOR INDEPENDIENTE CON COLOR DIFERENTE
 # ===============================
 
-st.markdown("### Perfeccionador de Prompt Profesional (Totalmente Independiente)")
+st.markdown('<div class="perfeccionador-block">', unsafe_allow_html=True)
+st.markdown('<h2 class="perfeccionador-title">Perfeccionador de Prompt Profesional (Totalmente Independiente)</h2>', unsafe_allow_html=True)
 
-# Opciones independientes para el perfeccionador
+# Opciones independientes para el perfeccionador (con color distinto gracias al bloque)
 nitidez_extrema_perf = st.checkbox("Activar nitidez extrema profesional (perfeccionador)", value=True)
 contraste_extremo_perf = st.checkbox("Activar contraste extremo profesional (perfeccionador)", value=True)
 
@@ -217,7 +233,7 @@ prompt_crudo = st.text_area("Prompt crudo a perfeccionar", height=150, placehold
 
 if st.button("Generar Prompt Perfeccionado Independiente"):
     if prompt_crudo.strip():
-        base_nuclear_perf = FORMULA_NUCLEAR_BASE if usar_formula_nuclear else FORMULA_SIMPLE
+        base_nuclear_perf = FORMULA_NUCLEAR_BASE if usar_formula_nuclear else FORMULA_SIMPLE  # Usa el toggle principal para coherencia
         prompt_perfeccionado_en = f"{texto_fijo_inicio}{base_nuclear_perf} {nitidez_texto_perf}{contraste_color_texto_perf}{prioridad_final_perf}{prompt_crudo.strip()}, {tipo_plano_perf}, shot on {lente_perf}, {iluminacion_perf}, {composicion_perf}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo_final_perf}, {detalles_final_perf}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB vibrant rich colors, {firma_obligatoria}"
         full_perfeccionado_en = prompt_perfeccionado_en + f"\n\nNegative prompt: {negative_nuclear}"
         st.code(full_perfeccionado_en, language="text")
@@ -225,6 +241,8 @@ if st.button("Generar Prompt Perfeccionado Independiente"):
         st.success("Prompt perfeccionado independiente copiado al portapapeles!")
     else:
         st.warning("Pega un prompt crudo primero")
+
+st.markdown('</div>', unsafe_allow_html=True)  # Cierre del bloque azul
 
 # Restauracion
 if st.button("Generar Plantilla Restauracion Nuclear v7"):
@@ -237,4 +255,4 @@ if st.button("Generar Plantilla Restauracion Nuclear v7"):
     )
     st.code(restauracion_nuclear + f"\n\nNegative prompt: {negative_nuclear}", language="text")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v20.1 Nuclear Ultimate 2025 - SyntaxError Corregido - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v21.0 Nuclear Ultimate 2025 - Perfeccionador Visualmente Distinto - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
