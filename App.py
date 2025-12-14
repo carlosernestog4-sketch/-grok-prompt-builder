@@ -2,9 +2,9 @@
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v7.9 Nuclear 2025", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v8.0 Nuclear 2025", layout="centered")
 
-# Estilo v7.9
+# Estilo v8.0
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -15,13 +15,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>Grok Prompt Builder v7.9 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - Nitidez, Contraste e Identity Siempre ON</p>", unsafe_allow_html=True)
+st.markdown("<h1>Grok Prompt Builder v8.0 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - Frame Específico por Plano (Zero Errores Encuadre Gemini)</p>", unsafe_allow_html=True)
 
 # Texto fijo obligatorio al inicio
 texto_fijo_inicio = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Firma en la parte inferior derecha de Carlos Ernesto. "
 
-# Botones siempre activos por defecto
+# Checkboxes siempre activos
 nitidez_extrema = st.checkbox("Activar nitidez extrema profesional (siempre ON)", value=True)
 contraste_extremo = st.checkbox("Activar contraste extremo profesional (siempre ON)", value=True)
 usar_lock_absoluto = st.checkbox("Activar IDENTIDAD LOCK ABSOLUTO v7 (1000% inviolable - siempre ON)", value=True)
@@ -69,14 +69,23 @@ firma_obligatoria = ', signature "Carlos Ernesto" in Cormorant Garamond Italic 4
 # Negative nuclear
 negative_nuclear = ("worst quality, low quality, normal quality, lowres, bad anatomy, bad hands, missing fingers, extra digits, fewer digits, cropped, jpeg artifacts, signature, watermark, username, blurry, out of focus, censorship, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, bad proportions, extra limbs, cloned face, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, cross-eyed, mutated, bad body, bad feet, disfigured, gross proportions, modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, symmetry excess, doll eyes, text, logo, watermark, overexposed, underexposed")
 
-# Configuración Nuclear v7
-st.markdown("### Configuracion Nuclear v7")
+# Configuración Nuclear v8
+st.markdown("### Configuracion Nuclear v8")
 
 col1, col2 = st.columns(2)
 with col1:
-    tipo_plano = st.selectbox("Tipo de Plano v7", [
-        "Plano extremo (face 95-100%)", "Primerisimo primer plano", "Primer plano", "Plano medio corto", "Plano americano", "Plano medio (70-80% height)", "Plano general", "Gran plano general (full body + space feet)"
-    ])
+    # Tipo de Plano v8 con frame específico infalible
+    plano_opciones = [
+        "Plano extremo (face 95-100% height, extreme close-up crop mid-forehead to chin)",
+        "Primerisimo primer plano (face 95-100% height, extreme close-up crop mid-forehead to chin)",
+        "Primer plano (head to just below clavicle, face 90% height)",
+        "Plano medio corto (top of head to waist, subject 70-80% height)",
+        "Plano americano (top of head to waist, subject 70-80% height)",
+        "Plano medio (top of head to mid-torso, subject 75% height)",
+        "Plano general (full body head to toe + 10-15 cm space for feet, --ar 9:16)",
+        "Gran plano general (full body head to toe + 10-15 cm space for feet, --ar 9:16)"
+    ]
+    tipo_plano = st.selectbox("Tipo de Plano v8 (frame infalible anti-error Gemini)", plano_opciones)
     lente_exacta = st.selectbox("Variacion Lente Exacta v7", [
         "RF 85mm f/1.2 @ f/1.8 (primer plano extremo)",
         "RF 85mm f/1.2 @ f/2.8 (retrato clasico)",
@@ -96,7 +105,7 @@ with col1:
 with col2:
     composicion_pro = st.selectbox("Composicion v7", ["rule of thirds golden ratio eye-level, subject 75% height (85% full body)", "centred symmetric", "low-angle dramatic", "high-angle natural"])
     fondo = st.text_input("Fondo v7", "clean seamless dark studio background")
-    usar_formula_nuclear = st.checkbox("Activar FORMULA NUCLEAR 2025 base (nunca falla)", value=False)  # Apagado por defecto
+    usar_formula_nuclear = st.checkbox("Activar FORMULA NUCLEAR 2025 base (nunca falla)", value=False)
 
 # Detalles Extra Pro v7 (apagado por defecto)
 expandir_detalles = st.checkbox("Activar Detalles Extra Pro v7", value=False)
@@ -117,7 +126,7 @@ if usar_formula_nuclear:
 else:
     base_nuclear = "Generate a hyperrealistic 8K image without changing facial features hair or skin tone of the subject, extreme sharpness perfect micro-contrast high dynamic range razor-sharp details throughout"
 
-# Prompt principal
+# Prompt principal con frame específico
 sujeto_final = f"photorealistic portrait of {identidad_final}, "
 
 prompt_en = f"{texto_fijo_inicio}{base_nuclear} {nitidez_texto}{contraste_texto}{sujeto_final}{tipo_plano}, shot on Canon EOS R5 Mark II + {lente_exacta}, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
@@ -130,7 +139,7 @@ full_en = prompt_en + negative_full
 full_es = prompt_es + negative_full
 
 # Salida principal
-st.markdown("### Prompt Ingles Nuclear v7.9")
+st.markdown("### Prompt Ingles Nuclear v8.0")
 st.code(full_en, language="text")
 col1, col2 = st.columns(2)
 with col1:
@@ -143,9 +152,9 @@ with col1:
         st.success("Prompt Ingles copiado al portapapeles!")
 with col2:
     buffer_en = BytesIO(full_en.encode())
-    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v7.9.txt", "text/plain")
+    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v8.0.txt", "text/plain")
 
-st.markdown("### Prompt Espanol Nuclear v7.9")
+st.markdown("### Prompt Espanol Nuclear v8.0")
 st.code(full_es, language="text")
 col3, col4 = st.columns(2)
 with col3:
@@ -158,15 +167,15 @@ with col3:
         st.success("Prompt Espanol copiado al portapapeles!")
 with col4:
     buffer_es = BytesIO(full_es.encode())
-    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v7.9.txt", "text/plain")
+    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v8.0.txt", "text/plain")
 
-# Perfeccionador profesional
-st.markdown("### Perfeccionador de Prompt Profesional v7.9")
+# Perfeccionador profesional (con frame específico)
+st.markdown("### Perfeccionador de Prompt Profesional v8.0")
 prompt_crudo = st.text_area("Pega aquí cualquier prompt crudo para aumentarlo con palabras técnicas profesionales", height=150, placeholder="Ej: un hombre mirando a cámara...")
 
 if st.button("Aumentar con palabras técnicas profesionales"):
     if prompt_crudo.strip():
-        prompt_perfeccionado = f"{texto_fijo_inicio}{base_nuclear} {nitidez_texto}{contraste_texto}{prompt_crudo.strip()}, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
+        prompt_perfeccionado = f"{texto_fijo_inicio}{base_nuclear} {nitidez_texto}{contraste_texto}{prompt_crudo.strip()}, {tipo_plano}, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
         full_perfeccionado = prompt_perfeccionado + negative_full
         st.code(full_perfeccionado, language="text")
         st.markdown(f"""
@@ -178,7 +187,7 @@ if st.button("Aumentar con palabras técnicas profesionales"):
     else:
         st.warning("Pega un prompt primero")
 
-# Restauracion v7
+# Restauracion v8 (con frame específico si aplica)
 if st.button("Generar Plantilla Restauracion Nuclear v7"):
     restauracion_nuclear = (
         f"{texto_fijo_inicio}"
@@ -189,4 +198,4 @@ if st.button("Generar Plantilla Restauracion Nuclear v7"):
     )
     st.code(restauracion_nuclear + negative_full, language="text")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v7.9 Nuclear Ultimate 2025 - 1000% Inviolable - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v8.0 Nuclear Ultimate 2025 - Frame Específico Anti-Error Gemini - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
