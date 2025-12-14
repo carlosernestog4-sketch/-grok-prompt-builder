@@ -1,10 +1,9 @@
-
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v14.0 Nuclear 2025", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v16.0 Nuclear 2025", layout="centered")
 
-# Estilo v14.0
+# Estilo v16.0
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -15,8 +14,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>Grok Prompt Builder v14.0 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - Detalles Extra Vacío por Defecto - Depurado Profesional</p>", unsafe_allow_html=True)
+st.markdown("<h1>Grok Prompt Builder v16.0 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - Tatuajes Baja Visibilidad Permanente (sin checkbox)</p>", unsafe_allow_html=True)
 
 # Texto fijo al inicio
 texto_fijo_inicio = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Firma en la parte inferior derecha de Carlos Ernesto. "
@@ -53,7 +52,7 @@ if usar_lock_absoluto:
                        "Eyebrows: thick, dark brown #1C110A, straight with natural arch, 0.9 cm thickness. "
                        "Hair: military high & tight buzzcut 1-2 mm all over, dark brown #1C110A, receding temples NW2, sharp widow's peak. "
                        "Skin: Fitzpatrick II-III, warm Mediterranean undertone, L*a*b* = L68 a+10 b+18, visible pores especially nose/cheeks, subtle freckles on shoulders, two small moles (left cheekbone + right jawline). "
-                       "Tattoos: large detailed blackwork sacred geometry + lion on left pectoral (exact reference preserved), small minimalist coordinates tattoo inner left forearm. "
+                       "Subtle tattoos with low visibility: large detailed blackwork sacred geometry + lion on left pectoral (exact reference preserved but low prominence), small minimalist coordinates tattoo inner left forearm. "
                        "Always clean-shaven, zero stubble, neutral closed-mouth expression, direct gaze to camera.")
     st.success("IDENTIDAD LOCK ABSOLUTO v7 ACTIVADO - 1000% no drift ever")
 else:
@@ -69,12 +68,12 @@ firma_obligatoria = ', signature "Carlos Ernesto" in Cormorant Garamond Italic 4
 # Negative nuclear
 negative_nuclear = ("worst quality, low quality, normal quality, lowres, bad anatomy, bad hands, missing fingers, extra digits, fewer digits, cropped, jpeg artifacts, signature, watermark, username, blurry, out of focus, censorship, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, bad proportions, extra limbs, cloned face, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, cross-eyed, mutated, bad body, bad feet, disfigured, gross proportions, modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, symmetry excess, doll eyes, text, logo, watermark, overexposed, underexposed")
 
-# Configuración Nuclear v14
-st.markdown("### Configuracion Nuclear v14")
+# Configuración Nuclear v16
+st.markdown("### Configuracion Nuclear v16")
 
 col1, col2 = st.columns(2)
 with col1:
-    tipo_plano = st.selectbox("Tipo de Plano v14 (frame infalible)", [
+    tipo_plano = st.selectbox("Tipo de Plano v16 (frame infalible)", [
         "Plano extremo (face 95-100% height, extreme close-up crop mid-forehead to chin, STRICTLY CROP EXACTLY AS SPECIFIED, NO DEVIATION)",
         "Primerisimo primer plano (face 95-100% height, extreme close-up crop mid-forehead to chin, STRICTLY CROP EXACTLY AS SPECIFIED, NO DEVIATION)",
         "Primer plano (head to just below clavicle, face 90% height, STRICTLY CROP EXACTLY AS SPECIFIED, NO DEVIATION)",
@@ -84,7 +83,7 @@ with col1:
         "Plano general (full body head to toe + 10-15 cm space for feet, --ar 9:16, STRICTLY CROP EXACTLY AS SPECIFIED, NO DEVIATION)",
         "Gran plano general (full body head to toe + 10-15 cm space for feet, --ar 9:16, STRICTLY CROP EXACTLY AS SPECIFIED, NO DEVIATION)"
     ])
-    lente_exacta = st.selectbox("Lente v14 (Canon / Sony / iPhone)", [
+    lente_exacta = st.selectbox("Lente v16 (Canon / Sony / iPhone)", [
         "Canon RF 85mm f/1.2 L USM @ f/1.8 (primer plano extremo)",
         "Canon RF 85mm f/1.2 L USM @ f/2.8 (retrato clasico)",
         "Canon RF 50mm f/1.2 L USM @ f/4 (plano medio)",
@@ -94,7 +93,7 @@ with col1:
         "Sony FE 35mm f/1.4 GM @ f/5.6",
         "iPhone 16 Pro Max 48MP main 1x, simulated f/1.6, Dolby Vision HDR"
     ])
-    iluminacion_pro = st.selectbox("Iluminacion Profesional v14", [
+    iluminacion_pro = st.selectbox("Iluminacion Profesional v16", [
         "3-point + rim + hair light: 120cm octabox key 45 degree + silver fill 2:1 + 30cm stripbox rim + hair light top-back, all 5600K CRI 98+",
         "soft diffused daylight golden hour wrap-around",
         "neutral daylight HDR",
@@ -104,7 +103,7 @@ with col1:
     ])
 
 with col2:
-    composicion_pro = st.selectbox("Composicion v14", ["rule of thirds golden ratio eye-level, subject 75% height (85% full body)", "centred symmetric", "low-angle dramatic", "high-angle natural"])
+    composicion_pro = st.selectbox("Composicion v16", ["rule of thirds golden ratio eye-level, subject 75% height (85% full body)", "centred symmetric", "low-angle dramatic", "high-angle natural"])
     usar_formula_nuclear = st.checkbox("Activar FORMULA NUCLEAR 2025 base (nunca falla)", value=False)
 
 # Prioridad (MAYÚSCULAS + paréntesis)
@@ -112,13 +111,13 @@ st.markdown("### Prioridad (MÁXIMA RESPONSABILIDAD - MAYÚSCULAS)")
 prioridad_texto = st.text_area("Detalla aquí lo que quieres priorizar con MÁXIMA RESPONSABILIDAD (ej: mujer de pelo suelto)", value="", height=100)
 prioridad_final = f"(PRIORITISE WITH MAXIMUM RESPONSIBILITY: {prioridad_texto.upper()}), " if prioridad_texto.strip() else ""
 
-# Detalles Extra Pro v14 (VACÍO por defecto)
-expandir_detalles = st.checkbox("Activar Detalles Extra Pro v14 (incluye fondo opcional)", value=False)
-detalles_base = st.text_area("Detalles Extra base v14 (vacío por defecto - escribe fondo aquí si quieres, ej: fondo de playa al atardecer)", value="", height=150, placeholder="Ej: mirada intensa directa, camiseta negra ajustada, fondo oscuro con luces bokeh")
+# Detalles Extra Pro v16 (vacío por defecto)
+expandir_detalles = st.checkbox("Activar Detalles Extra Pro v16 (incluye fondo opcional)", value=False)
+detalles_base = st.text_area("Detalles Extra base v16 (vacío por defecto - escribe fondo aquí si quieres, ej: fondo de playa al atardecer)", value="", height=150, placeholder="Ej: mirada intensa directa, camiseta negra ajustada, fondo oscuro con luces bokeh")
 
 if expandir_detalles:
     detalles_final = f"{detalles_base}, intense emotional depth confident direct gaze natural asymmetry, visible pores subtle sweat highlights micro-wrinkles fabric grain realistic imperfections, cinematic serene moody atmosphere, razor-sharp micro-details high dynamic range, 1000% exact facial identity lock no drift ever"
-    st.success("Detalles Pro v14 ACTIVADOS")
+    st.success("Detalles Pro v16 ACTIVADOS")
 else:
     detalles_final = detalles_base
 
@@ -147,7 +146,7 @@ full_en = prompt_en + negative_full
 full_es = prompt_es + negative_full
 
 # Salida principal
-st.markdown("### Prompt Ingles Nuclear v14.0")
+st.markdown("### Prompt Ingles Nuclear v16.0")
 st.code(full_en, language="text")
 col1, col2 = st.columns(2)
 with col1:
@@ -160,9 +159,9 @@ with col1:
         st.success("Prompt Ingles copiado al portapapeles!")
 with col2:
     buffer_en = BytesIO(full_en.encode())
-    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v14.0.txt", "text/plain")
+    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v16.0.txt", "text/plain")
 
-st.markdown("### Prompt Espanol Nuclear v14.0")
+st.markdown("### Prompt Espanol Nuclear v16.0")
 st.code(full_es, language="text")
 col3, col4 = st.columns(2)
 with col3:
@@ -175,10 +174,10 @@ with col3:
         st.success("Prompt Espanol copiado al portapapeles!")
 with col4:
     buffer_es = BytesIO(full_es.encode())
-    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v14.0.txt", "text/plain")
+    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v16.0.txt", "text/plain")
 
 # Perfeccionador profesional
-st.markdown("### Perfeccionador de Prompt Profesional v14.0")
+st.markdown("### Perfeccionador de Prompt Profesional v16.0")
 prompt_crudo = st.text_area("Pega aquí cualquier prompt crudo para aumentarlo con palabras técnicas profesionales", height=150, placeholder="Ej: un hombre mirando a cámara...")
 
 if st.button("Aumentar con palabras técnicas profesionales"):
@@ -195,7 +194,7 @@ if st.button("Aumentar con palabras técnicas profesionales"):
     else:
         st.warning("Pega un prompt primero")
 
-# Restauracion v14
+# Restauracion v16
 if st.button("Generar Plantilla Restauracion Nuclear v7"):
     restauracion_nuclear = (
         f"{texto_fijo_inicio}"
@@ -206,4 +205,4 @@ if st.button("Generar Plantilla Restauracion Nuclear v7"):
     )
     st.code(restauracion_nuclear + negative_full, language="text")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v14.0 Nuclear Ultimate 2025 - Detalles Extra Vacío por Defecto - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v16.0 Nuclear Ultimate 2025 - Tatuajes Baja Visibilidad Permanente - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
