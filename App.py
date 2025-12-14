@@ -2,9 +2,9 @@
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v7.7 Nuclear 2025", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v7.8 Nuclear 2025", layout="centered")
 
-# Estilo v7.7
+# Estilo v7.8
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -15,8 +15,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>Grok Prompt Builder v7.7 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - 1000% Identity Lock Absoluto - Copia Prompt Correcta</p>", unsafe_allow_html=True)
+st.markdown("<h1>Grok Prompt Builder v7.8 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - 1000% Identity Lock Absoluto - Copia con JavaScript Seguro</p>", unsafe_allow_html=True)
 
 # Texto fijo obligatorio al inicio
 texto_fijo_inicio = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Firma en la parte inferior derecha de Carlos Ernesto. "
@@ -31,7 +31,6 @@ contraste_texto = "perfect shadow/highlight recovery, rich deep blacks, bright h
 # 1. IDENTIDAD LOCK ABSOLUTO v7
 usar_lock_absoluto = st.checkbox("Activar IDENTIDAD LOCK ABSOLUTO v7 (1000% inviolable - recomendado ON)", value=True)
 
-# Género y tipo de cuerpo (solo visibles si desactivas lock)
 if not usar_lock_absoluto:
     masculino = st.checkbox("Sujeto Masculino", value=True)
     tipo_cuerpo = st.selectbox("Tipo de Cuerpo", [
@@ -48,7 +47,6 @@ else:
     masculino = True
     tipo_cuerpo = "Delgado (slim)"
 
-# Identidad final (CORREGIDO: sin mención identidad personal cuando lock OFF)
 if usar_lock_absoluto:
     identidad_final = ("Exact same person, 31 years old, 1.650 m barefoot height, 59-61 kg, BMI 21.8, lean ectomorph body, zero visible muscle definition, flat stomach, narrow shoulders 39 cm biacromial, long slim arms (arm span 1.70 m), narrow wrists 16 cm, long legs, visible thigh gap. "
                        "Face: perfect rectangle 19.5 cm length x 14 cm width, strong square jaw 120 degree gonial angle, high defined cheekbones, straight medium nose 5.2 cm length, thin upper lip 8 mm, medium lower lip, philtrum 1.4 cm. "
@@ -60,11 +58,11 @@ if usar_lock_absoluto:
                        "Always clean-shaven, zero stubble, neutral closed-mouth expression, direct gaze to camera.")
     st.success("IDENTIDAD LOCK ABSOLUTO v7 ACTIVADO - 1000% no drift ever")
 else:
-    # Cuando lock OFF: solo género + tipo de cuerpo, sin detalles personales
-    genero_str = "man" if masculino else "woman"
-    cuerpo_str = tipo_cuerpo.lower().replace(' (slim)', '').replace(' (athletic)', '').replace(' (average)', '').replace(' (curvy)', '').replace(' (hourglass)', '').replace(' (inverted triangle)', '').replace(' (rectangle)', '').replace(' (pear)', '')
-    identidad_final = f"attractive {genero_str} with {cuerpo_str} body"
-    st.info("Modo flexible activado - solo género y tipo de cuerpo (sin identidad personal)")
+    if masculino:
+        identidad_final = f"attractive man with {tipo_cuerpo.lower().replace(' (slim)', '').replace(' (athletic)', '').replace(' (average)', '')} body"
+    else:
+        identidad_final = f"attractive woman with {tipo_cuerpo.lower().replace(' (slim)', '').replace(' (athletic)', '').replace(' (average)', '')} body"
+    st.info("Modo flexible activado - solo género y tipo de cuerpo")
 
 # 2. FIRMA OBLIGATORIA v7
 firma_obligatoria = ', signature "Carlos Ernesto" in Cormorant Garamond Italic 48 pt, 78% opacity, pure white (#FFFFFF) on dark backgrounds / pure black (#000000) on light, positioned exactly 40 px from right edge and 40 px from bottom edge, drop shadow 15% opacity radius 2 px'
@@ -120,7 +118,7 @@ if usar_formula_nuclear:
 else:
     base_nuclear = "Generate a hyperrealistic 8K image without changing facial features hair or skin tone of the subject, extreme sharpness perfect micro-contrast high dynamic range razor-sharp details throughout"
 
-# Prompt principal con nitidez/contraste
+# Prompt principal
 sujeto_final = f"photorealistic portrait of {identidad_final}, "
 
 prompt_en = f"{texto_fijo_inicio}{base_nuclear} {nitidez_texto}{contraste_texto}{sujeto_final}{tipo_plano}, shot on Canon EOS R5 Mark II + {lente_exacta}, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
@@ -133,30 +131,38 @@ full_en = prompt_en + negative_full
 full_es = prompt_es + negative_full
 
 # Salida principal
-st.markdown("### Prompt Ingles Nuclear v7.7")
+st.markdown("### Prompt Ingles Nuclear v7.8")
 st.code(full_en, language="text")
 col1, col2 = st.columns(2)
 with col1:
     if st.button("Copiar Ingles"):
-        st.clipboard_copy(full_en)
+        st.markdown(f"""
+        <script>
+        navigator.clipboard.writeText(`{full_en}`);
+        </script>
+        """, unsafe_allow_html=True)
         st.success("Prompt Ingles copiado al portapapeles!")
 with col2:
     buffer_en = BytesIO(full_en.encode())
-    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v7.7.txt", "text/plain")
+    st.download_button("Descargar .txt Ingles", buffer_en, "prompt_ingles_v7.8.txt", "text/plain")
 
-st.markdown("### Prompt Espanol Nuclear v7.7")
+st.markdown("### Prompt Espanol Nuclear v7.8")
 st.code(full_es, language="text")
 col3, col4 = st.columns(2)
 with col3:
     if st.button("Copiar Espanol"):
-        st.clipboard_copy(full_es)
+        st.markdown(f"""
+        <script>
+        navigator.clipboard.writeText(`{full_es}`);
+        </script>
+        """, unsafe_allow_html=True)
         st.success("Prompt Espanol copiado al portapapeles!")
 with col4:
     buffer_es = BytesIO(full_es.encode())
-    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v7.7.txt", "text/plain")
+    st.download_button("Descargar .txt Espanol", buffer_es, "prompt_espanol_v7.8.txt", "text/plain")
 
-# Perfeccionador profesional (con nitidez/contraste)
-st.markdown("### Perfeccionador de Prompt Profesional v7.7")
+# Perfeccionador profesional (con JavaScript copia)
+st.markdown("### Perfeccionador de Prompt Profesional v7.8")
 prompt_crudo = st.text_area("Pega aquí cualquier prompt crudo para aumentarlo con palabras técnicas profesionales", height=150, placeholder="Ej: un hombre mirando a cámara...")
 
 if st.button("Aumentar con palabras técnicas profesionales"):
@@ -164,7 +170,12 @@ if st.button("Aumentar con palabras técnicas profesionales"):
         prompt_perfeccionado = f"{texto_fijo_inicio}{base_nuclear} {nitidez_texto}{contraste_texto}{prompt_crudo.strip()}, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM, {iluminacion_pro}, {composicion_pro}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo}, {detalles_final}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB, {firma_obligatoria}"
         full_perfeccionado = prompt_perfeccionado + negative_full
         st.code(full_perfeccionado, language="text")
-        st.success("Prompt aumentado profesionalmente con nitidez y contraste extremo + potencia v7.7!")
+        st.markdown(f"""
+        <script>
+        navigator.clipboard.writeText(`{full_perfeccionado}`);
+        </script>
+        """, unsafe_allow_html=True)
+        st.success("Prompt aumentado y copiado al portapapeles!")
     else:
         st.warning("Pega un prompt primero")
 
@@ -179,4 +190,4 @@ if st.button("Generar Plantilla Restauracion Nuclear v7"):
     )
     st.code(restauracion_nuclear + negative_full, language="text")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v7.7 Nuclear Ultimate 2025 - 1000% Inviolable - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v7.8 Nuclear Ultimate 2025 - 1000% Inviolable - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
