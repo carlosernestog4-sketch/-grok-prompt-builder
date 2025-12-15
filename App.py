@@ -2,9 +2,9 @@
 import streamlit as st
 from io import BytesIO
 
-st.set_page_config(page_title="Grok Prompt Builder v23.0 Nuclear 2025", layout="centered")
+st.set_page_config(page_title="Grok Prompt Builder v24.0 Nuclear 2025", layout="centered")
 
-# Estilo v23.0
+# Estilo v24.0
 st.markdown("""
 <style>
     .main {background-color: #0a0e17; color: #e0e0e0;}
@@ -28,19 +28,19 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1>Grok Prompt Builder v23.0 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - 2 Prompts Totalmente Diferentes (Fórmula Nuclear Base ON por Defecto)</p>", unsafe_allow_html=True)
+st.markdown("<h1>Grok Prompt Builder v24.0 Nuclear Ultimate 2025</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #aaa;'>Por Carlos Ernesto - Todo Actualizado + Nitidez/Contraste Extremo Profesional</p>", unsafe_allow_html=True)
 
 # Texto fijo al inicio
-texto_fijo_inicio = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Firma en la parte inferior derecha de Carlos Ernesto. "
+TEXTO_FIJO_INICIO = "Generate a hyperrealistic 8K image without changing facial features, hair, or skin tone of the subject in the image I show you. Firma en la parte inferior derecha de Carlos Ernesto. "
 
 # Firma obligatoria
-firma_obligatoria = ', signature "Carlos Ernesto" in Cormorant Garamond Italic 48 pt, 78% opacity, pure white (#FFFFFF) on dark backgrounds / pure black (#000000) on light, positioned exactly 40 px from right edge and 40 px from bottom edge, drop shadow 15% opacity radius 2 px'
+FIRMA_OBLIGATORIA = ', signature "Carlos Ernesto" in Cormorant Garamond Italic 48 pt, 78% opacity, pure white (#FFFFFF) on dark backgrounds / pure black (#000000) on light, positioned exactly 40 px from right edge and 40 px from bottom edge, drop shadow 15% opacity radius 2 px'
 
 # Negative nuclear
-negative_nuclear = ("worst quality, low quality, normal quality, lowres, bad anatomy, bad hands, missing fingers, extra digits, fewer digits, cropped, jpeg artifacts, signature, watermark, username, blurry, out of focus, censorship, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, bad proportions, extra limbs, cloned face, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, cross-eyed, mutated, bad body, bad feet, disfigured, gross proportions, modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, symmetry excess, doll eyes, text, logo, watermark, overexposed, underexposed")
+NEGATIVE_NUCLEAR = ("worst quality, low quality, normal quality, lowres, bad anatomy, bad hands, missing fingers, extra digits, fewer digits, cropped, jpeg artifacts, signature, watermark, username, blurry, out of focus, censorship, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, bad proportions, extra limbs, cloned face, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, cross-eyed, mutated, bad body, bad feet, disfigured, gross proportions, modern makeup, perfect teeth, airbrushed skin, doll skin, barbie look, waxy texture, beauty filter, over-smoothed details, fake sharpness, halation artifacts, deformed hands, extra fingers, uncanny valley, lens flare, digital noise, posterization, banding, compression artifacts, plastic skin, glossy skin, porcelain skin, mannequin look, cgi render, 3d model, illustration, cartoon, painting, heavy retouch, skin smoothing, deformed pores, blurry texture, low detail skin, over-sharpening halos, AI artifacts, symmetry excess, doll eyes, text, logo, watermark, overexposed, underexposed")
 
-# FORMULA NUCLEAR 2025
+# FORMULA NUCLEAR 2025 (ON por defecto)
 FORMULA_NUCLEAR_BASE = ("Ultra photorealistic 8K 16-bit RAW museum-grade portrait of exact same 31-year-old slim man 1.65m as identity reference, 1000% identity lock no drift ever, shot on Canon EOS R5 Mark II + RF 85mm f/1.2 L USM at f/1.8 (or f/4 full body), 1/250s, ISO 100, 14-bit CR3, "
                         "3-point professional studio lighting: 120cm octabox key light 45 degree camera right at eye height + 20 degree grid, silver fill reflector left side 2:1 ratio, subtle 30cm stripbox rim light 160 degree behind, hair light 20 degree grid top-back, all Profoto B10X+ 5600K CRI 98+, "
                         "soft wrap-around shadows with visible micro-shadows under cheekbones and jaw, natural rectangular catchlights, rule of thirds golden ratio, eye-level angle, subject exactly 75% vertical frame height (85% full body), creamy bokeh, micro-contrast preserved, "
@@ -48,6 +48,7 @@ FORMULA_NUCLEAR_BASE = ("Ultra photorealistic 8K 16-bit RAW museum-grade portrai
 
 FORMULA_SIMPLE = "Generate a hyperrealistic 8K image without changing facial features hair or skin tone of the subject, extreme sharpness perfect micro-contrast high dynamic range razor-sharp details throughout"
 
+# Identity lock (sin tatuajes)
 IDENTIDAD_LOCK = ("Exact same person, 31 years old, 1.650 m barefoot height, 59-61 kg, BMI 21.8, lean ectomorph body, zero visible muscle definition, flat stomach, narrow shoulders 39 cm biacromial, long slim arms (arm span 1.70 m), narrow wrists 16 cm, long legs, visible thigh gap. "
                   "Face: perfect rectangle 19.5 cm length x 14 cm width, strong square jaw 120 degree gonial angle, high defined cheekbones, straight medium nose 5.2 cm length, thin upper lip 8 mm, medium lower lip, philtrum 1.4 cm. "
                   "Eyes: dark green (hex #1A3C34), almond shape 3.2 cm width, slightly hooded upper lid, subtle lower eye bags, very dark limbal ring, inter-pupillary distance 6.3 cm, slight downward outer canthus. "
@@ -66,7 +67,7 @@ st.markdown("### Prompt Principal")
 nitidez_extrema_main = st.checkbox("Activar nitidez extrema profesional (principal)", value=True)
 contraste_extremo_main = st.checkbox("Activar contraste extremo profesional (principal)", value=True)
 usar_lock_absoluto_main = st.checkbox("Activar IDENTIDAD LOCK ABSOLUTO v7 (principal)", value=True)
-usar_formula_main = st.checkbox("Activar FORMULA NUCLEAR 2025 base (principal)", value=True)  # ON por defecto
+usar_formula_main = st.checkbox("Activar FORMULA NUCLEAR 2025 base (principal)", value=True)
 
 nitidez_texto_main = "extreme sharpness, razor-sharp micro-details, perfect micro-contrast, high dynamic range throughout, " if nitidez_extrema_main else ""
 contraste_color_texto_main = "perfect shadow/highlight recovery, rich deep blacks, bright vibrant highlights, cinematic contrast curve with rich saturated colors, no dull tones, " if contraste_extremo_main else ""
@@ -138,14 +139,14 @@ base_nuclear_main = FORMULA_NUCLEAR_BASE if usar_formula_main else FORMULA_SIMPL
 
 sujeto_final_main = f"photorealistic portrait of {identidad_main}, "
 
-prompt_en_main = f"{texto_fijo_inicio}{base_nuclear_main} {nitidez_texto_main}{contraste_color_texto_main}{prioridad_final_main}{sujeto_final_main}{tipo_plano_main}, shot on {lente_main}, {iluminacion_main}, {composicion_main}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo_final_main}, {detalles_final_main}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB vibrant rich colors, {firma_obligatoria}"
+prompt_en_main = f"{TEXTO_FIJO_INICIO}{base_nuclear_main} {nitidez_texto_main}{contraste_color_texto_main}{sujeto_final_main}{tipo_plano_main}, shot on {lente_main}, {iluminacion_main}, {composicion_main}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo_final_main}, {detalles_final_main}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB vibrant rich colors, {prioridad_final_main}, {FIRMA_OBLIGATORIA}"
 
-prompt_es_main = f"{texto_fijo_inicio}{base_nuclear_main} {nitidez_texto_main}{contraste_color_texto_main}{prioridad_final_main}Retrato fotorealista de {identidad_main}, {tipo_plano_main}, tomado con {lente_main}, {iluminacion_main}, {composicion_main}, priorizar textura piel natural poros visibles micro-detalles imperfecciones realistas arrugas sutiles grano tela, {fondo_final_main}, {detalles_final_main}, ultra HD 8K fotorealista maximo detalle claridad Adobe RGB colores ricos vibrantes, {firma_obligatoria}"
+prompt_es_main = f"{TEXTO_FIJO_INICIO}{base_nuclear_main} {nitidez_texto_main}{contraste_color_texto_main}Retrato fotorealista de {identidad_main}, {tipo_plano_main}, tomado con {lente_main}, {iluminacion_main}, {composicion_main}, priorizar textura piel natural poros visibles micro-detalles imperfecciones realistas arrugas sutiles grano tela, {fondo_final_main}, {detalles_final_main}, ultra HD 8K fotorealista maximo detalle claridad Adobe RGB colores ricos vibrantes, {prioridad_final_main}, {FIRMA_OBLIGATORIA}"
 
-full_en_main = prompt_en_main + f"\n\nNegative prompt: {negative_nuclear}"
-full_es_main = prompt_es_main + f"\n\nNegative prompt: {negative_nuclear}"
+full_en_main = prompt_en_main + f"\n\nNegative prompt: {NEGATIVE_NUCLEAR}"
+full_es_main = prompt_es_main + f"\n\nNegative prompt: {NEGATIVE_NUCLEAR}"
 
-# Salida principal (2 prompts diferentes)
+# Salida principal
 st.markdown("### Prompt Principal Ingles")
 st.code(full_en_main, language="text")
 col1, col2 = st.columns(2)
@@ -155,7 +156,7 @@ with col1:
         st.success("Prompt Ingles (principal) copiado al portapapeles!")
 with col2:
     buffer_en_main = BytesIO(full_en_main.encode())
-    st.download_button("Descargar .txt Ingles (principal)", buffer_en_main, "prompt_principal_ingles_v23.0.txt", "text/plain")
+    st.download_button("Descargar .txt Ingles (principal)", buffer_en_main, "prompt_principal_ingles_v24.0.txt", "text/plain")
 
 st.markdown("### Prompt Principal Espanol")
 st.code(full_es_main, language="text")
@@ -166,19 +167,18 @@ with col3:
         st.success("Prompt Espanol (principal) copiado al portapapeles!")
 with col4:
     buffer_es_main = BytesIO(full_es_main.encode())
-    st.download_button("Descargar .txt Espanol (principal)", buffer_es_main, "prompt_principal_espanol_v23.0.txt", "text/plain")
+    st.download_button("Descargar .txt Espanol (principal)", buffer_es_main, "prompt_principal_espanol_v24.0.txt", "text/plain")
 
 # ===============================
-# PERFECCIONADOR INDEPENDIENTE (2do prompt totalmente diferente)
+# PERFECCIONADOR INDEPENDIENTE
 # ===============================
 
 st.markdown('<div class="perfeccionador-block">', unsafe_allow_html=True)
-st.markdown('<h2 class="perfeccionador-title">Perfeccionador de Prompt Profesional (2do Prompt Totalmente Diferente)</h2>', unsafe_allow_html=True)
+st.markdown('<h2 class="perfeccionador-title">Perfeccionador de Prompt Profesional (Totalmente Independiente)</h2>', unsafe_allow_html=True)
 
-# Opciones independientes (Fórmula Nuclear ON por defecto)
 nitidez_extrema_perf = st.checkbox("Activar nitidez extrema profesional (perfeccionador)", value=True)
 contraste_extremo_perf = st.checkbox("Activar contraste extremo profesional (perfeccionador)", value=True)
-usar_formula_perf = st.checkbox("Activar FORMULA NUCLEAR 2025 base (perfeccionador)", value=True)  # ON por defecto
+usar_formula_perf = st.checkbox("Activar FORMULA NUCLEAR 2025 base (perfeccionador)", value=True)
 
 nitidez_texto_perf = "extreme sharpness, razor-sharp micro-details, perfect micro-contrast, high dynamic range throughout, " if nitidez_extrema_perf else ""
 contraste_color_texto_perf = "perfect shadow/highlight recovery, rich deep blacks, bright vibrant highlights, cinematic contrast curve with rich saturated colors, no dull tones, " if contraste_extremo_perf else ""
@@ -234,8 +234,8 @@ prompt_crudo = st.text_area("Prompt crudo a perfeccionar", height=150, placehold
 if st.button("Generar 2do Prompt (Totalmente Diferente)"):
     if prompt_crudo.strip():
         base_nuclear_perf = FORMULA_NUCLEAR_BASE if usar_formula_perf else FORMULA_SIMPLE
-        prompt_perfeccionado_en = f"{texto_fijo_inicio}{base_nuclear_perf} {nitidez_texto_perf}{contraste_color_texto_perf}{prioridad_final_perf}{prompt_crudo.strip()}, {tipo_plano_perf}, shot on {lente_perf}, {iluminacion_perf}, {composicion_perf}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo_final_perf}, {detalles_final_perf}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB vibrant rich colors, {firma_obligatoria}"
-        full_perfeccionado_en = prompt_perfeccionado_en + f"\n\nNegative prompt: {negative_nuclear}"
+        prompt_perfeccionado_en = f"{TEXTO_FIJO_INICIO}{base_nuclear_perf} {nitidez_texto_perf}{contraste_color_texto_perf}{prioridad_final_perf}{prompt_crudo.strip()}, {tipo_plano_perf}, shot on {lente_perf}, {iluminacion_perf}, {composicion_perf}, prioritise natural skin texture visible pores micro-details realistic imperfections subtle wrinkles fabric grain, {fondo_final_perf}, {detalles_final_perf}, ultra HD 8K photorealistic maximum clarity detail Adobe RGB vibrant rich colors, {FIRMA_OBLIGATORIA}"
+        full_perfeccionado_en = prompt_perfeccionado_en + f"\n\nNegative prompt: {NEGATIVE_NUCLEAR}"
         st.code(full_perfeccionado_en, language="text")
         st.markdown(f"<script>navigator.clipboard.writeText(`{full_perfeccionado_en}`);</script>", unsafe_allow_html=True)
         st.success("2do Prompt (independiente) copiado al portapapeles!")
@@ -247,12 +247,12 @@ st.markdown('</div>', unsafe_allow_html=True)
 # Restauracion
 if st.button("Generar Plantilla Restauracion Nuclear v7"):
     restauracion_nuclear = (
-        f"{texto_fijo_inicio}"
+        f"{TEXTO_FIJO_INICIO}"
         "Museum-grade restoration of this damaged historical photograph to 8K 16-bit: surgically remove every dust speck, scratch, fold, crease, chemical stain, water damage, silvering, yellowing and fading while preserving 100% original film grain structure and chemical fingerprint. "
         "Forensic pixel-perfect reconstruction of missing areas. Frequency separation sharpening radius 0.7px, local contrast +8, full dynamic range recovery. "
         "If B&W -> colorize only with 1940-1970 Kodak Portra 400 / Ektachrome E100 calibrated tones, otherwise keep authentic sepia/silver gelatin. "
         "Re-photographed with Canon EOS R5 Mark II + RF 85mm f/1.2 L USM, soft north window light 1940-1970 era, 1000% identity lock, no modern retouch, signature \"Carlos Ernesto\" bottom-right"
     )
-    st.code(restauracion_nuclear + f"\n\nNegative prompt: {negative_nuclear}", language="text")
+    st.code(restauracion_nuclear + f"\n\nNegative prompt: {NEGATIVE_NUCLEAR}", language="text")
 
-st.markdown("<div class='footer'>Grok Prompt Builder v23.0 Nuclear Ultimate 2025 - 2 Prompts Totalmente Diferentes - Fórmula Nuclear ON por Defecto - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Grok Prompt Builder v24.0 Nuclear Ultimate 2025 - Todo Actualizado + 2 Prompts Diferentes - (c) Carlos Ernesto 2025</div>", unsafe_allow_html=True)
